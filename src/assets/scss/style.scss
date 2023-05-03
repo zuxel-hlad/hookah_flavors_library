@@ -1,0 +1,15 @@
+@import './reset.scss';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif, Arial, Helvetica;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 100%;
+    -webkit-tap-highlight-color: transparent;
+    background-color: #f8f8f8;
+}
+
+.app {
+    min-height: 100vh;
+}
