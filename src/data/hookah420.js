@@ -8,7 +8,7 @@ export default [
         title: '420 – Wildberry',
         type: '420',
         rating: 3,
-        compound: 'Земляника',
+        compound: 'Суниця',
         image: zeljanika,
     },
     {

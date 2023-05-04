@@ -6,8 +6,14 @@ const FlavorsList = () => {
     return (
         <Grid component="section" container spacing={2}>
             {flavors?.length ? (
-                flavors.map(flavor => {
-                    return <FlavorItem key={flavor.id} flavor={flavor} />;
+                flavors.map((flavor, idx) => {
+                    return (
+                        <FlavorItem
+                            tabIndex={idx}
+                            key={flavor.id}
+                            flavor={flavor}
+                        />
+                    );
                 })
             ) : (
                 <Typography

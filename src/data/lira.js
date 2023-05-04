@@ -6,7 +6,7 @@ export default [
         title: 'Lira MIX SOURS',
         type: 'lira',
         rating: 1,
-        compound: 'Апельсин, Арбуз, Яблоко, Мандарин',
+        compound: 'Апельсин, Кавун, Яблуко, Мандарин',
         image: liraSours,
     },
 ];

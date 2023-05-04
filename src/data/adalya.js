@@ -7,7 +7,7 @@ export default [
         title: 'Adalya TAZ MANGUI',
         type: 'adalya',
         rating: 3,
-        compound: 'Апельсин, Манго, Мята',
+        compound: "Апельсин, Манго, М'ята",
         image: adalyaTazMangui,
     },
     {

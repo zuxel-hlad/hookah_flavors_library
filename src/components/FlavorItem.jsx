@@ -5,10 +5,11 @@ import {
     CardMedia,
     Typography,
     Box,
+    Rating,
 } from '@mui/material';
 import GradeIcon from '@mui/icons-material/Grade';
 
-const FlavorItem = ({ flavor }) => {
+const FlavorItem = ({ flavor, tabIndex }) => {
     const { title, type, rating, compound, image } = flavor;
     return (
         <Grid item xs={12} sm={6} md={4} lg={3}>
@@ -19,6 +20,7 @@ const FlavorItem = ({ flavor }) => {
                     display: 'flex',
                     flexDirection: 'column',
                 }}
+                tabIndex={tabIndex + 1}
             >
                 <Box sx={{ padding: '16px', height: '330px' }}>
                     <CardMedia
@@ -42,9 +44,7 @@ const FlavorItem = ({ flavor }) => {
                     </Typography>
                 </CardContent>
                 <Box sx={{ padding: '0 16px 16px' }}>
-                    {new Array(rating).fill('').map((item, idx) => (
-                        <GradeIcon color="warning" key={idx} />
-                    ))}
+                    <Rating name="flavor-rating" value={rating} readOnly />
                 </Box>
             </Card>
         </Grid>

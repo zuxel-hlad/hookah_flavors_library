@@ -8,7 +8,7 @@ export default [
         title: 'Serbetli RASPBERRY PEACH BLUEBERRY',
         type: 'serbetly',
         rating: 3,
-        compound: 'Малина, Персик, Черника',
+        compound: 'Малина, Персик, Чорниця',
         image: serbetliRaspberryPeachBlueberry,
     },
     {
