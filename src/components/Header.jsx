@@ -92,7 +92,13 @@ const Header = ({ updateSearch, updateFilter, search, filter }) => {
                             <em>Усі</em>
                         </MenuItem>
                         <MenuItem value="rating">За рейтингом</MenuItem>
-                        <MenuItem value="type">За маркою</MenuItem>
+                        <MenuItem value="daim">Daim</MenuItem>
+                        <MenuItem value="jibiar">Jibiar</MenuItem>
+                        <MenuItem value="serbetly">Serbetli</MenuItem>
+                        <MenuItem value="lira">Lira</MenuItem>
+                        <MenuItem value="molfar">Molfar</MenuItem>
+                        <MenuItem value="420">420</MenuItem>
+                        <MenuItem value="adalya">Adalya</MenuItem>
                         <MenuItem value="ice">Є холод</MenuItem>
                     </Select>
                 </Paper>
