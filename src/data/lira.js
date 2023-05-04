@@ -8,5 +8,6 @@ export default [
         rating: 1,
         compound: 'Апельсин, Кавун, Яблуко, Мандарин',
         image: liraSours,
+        ice: false,
     },
 ];

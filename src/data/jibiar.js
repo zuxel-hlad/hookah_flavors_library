@@ -16,6 +16,7 @@ export default [
         rating: 4,
         compound: 'Ожина, Лід, Малина',
         image: jibiarFreshBerry,
+        ice: true,
     },
     {
         id: uuidv4(),
@@ -24,6 +25,7 @@ export default [
         rating: 5,
         compound: 'Апельсин, Вишня, Малина, Манго, Персик, Чорниця',
         image: jibiarMasterMix,
+        ice: false,
     },
     {
         id: uuidv4(),
@@ -32,6 +34,7 @@ export default [
         rating: 5,
         compound: 'Малина, Персик, Чорниця',
         image: jibiarRaspberryPeachBlueberry,
+        ice: false,
     },
     {
         id: uuidv4(),
@@ -40,6 +43,7 @@ export default [
         rating: 5,
         compound: "Кавун, Ваніль, Диня, М'ята",
         image: jibiarDejavu,
+        ice: true,
     },
     {
         id: uuidv4(),
@@ -48,6 +52,7 @@ export default [
         rating: 3,
         compound: 'Кавун, Манго, Маракуя, Пітайя',
         image: jibiarAmourInfini,
+        ice: false,
     },
     {
         id: uuidv4(),
@@ -56,6 +61,7 @@ export default [
         rating: 3,
         compound: 'Абрикос, Лід, Чорниця',
         image: jibiarSantaBarbara,
+        ice: true,
     },
     {
         id: uuidv4(),
@@ -64,6 +70,7 @@ export default [
         rating: 3,
         compound: "Зелене Яблуко, Ківі, Лайм, М'ята",
         image: jibiarGreenMix,
+        ice: true,
     },
     {
         id: uuidv4(),
@@ -72,5 +79,6 @@ export default [
         rating: 3,
         compound: 'Кола, Лід',
         image: jibiarIceCola,
+        ice: true,
     },
 ];

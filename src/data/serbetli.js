@@ -10,6 +10,7 @@ export default [
         rating: 3,
         compound: 'Малина, Персик, Чорниця',
         image: serbetliRaspberryPeachBlueberry,
+        ice: false,
     },
     {
         id: uuidv4(),
@@ -18,5 +19,6 @@ export default [
         rating: 3,
         compound: 'Кола , Лимон',
         image: serbetliDoubleEffect,
+        ice: false,
     },
 ];

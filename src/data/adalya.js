@@ -9,6 +9,7 @@ export default [
         rating: 3,
         compound: "Апельсин, Манго, М'ята",
         image: adalyaTazMangui,
+        ice: true,
     },
     {
         id: uuidv4(),
@@ -17,5 +18,6 @@ export default [
         rating: 3,
         compound: 'Апельсин, Грейпфрут',
         image: adalyaNothLights,
+        ice: false,
     },
 ];

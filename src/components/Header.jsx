@@ -1,16 +1,11 @@
-import { useState } from 'react';
 import {
     AppBar,
     Toolbar,
     Paper,
     InputBase,
-    FormControl,
     Select,
     MenuItem,
-    FormHelperText,
     Divider,
-    IconButton,
-    InputLabel,
 } from '@mui/material';
 import { Search as SearchIcon } from '@mui/icons-material';
 
@@ -82,12 +77,7 @@ const headerStyles = {
     },
 };
 
-const Header = () => {
-    const [filter, setFilter] = useState('all');
-    const [search, setSearch] = useState('');
-    const handleChange = event => {
-        console.log('test');
-    };
+const Header = ({ updateSearch, updateFilter, search, filter }) => {
     return (
         <AppBar position="fixed" sx={headerStyles}>
             <Toolbar className="header-toolbar">
@@ -96,20 +86,20 @@ const Header = () => {
                         labelId="demo-select-small-label"
                         id="demo-select-small"
                         value={filter}
-                        onChange={e => setFilter(e.target.value)}
+                        onChange={e => updateFilter(e.target.value)}
                     >
                         <MenuItem value="all">
                             <em>Усі</em>
                         </MenuItem>
-                        <MenuItem value={10}>За рейтингом</MenuItem>
-                        <MenuItem value={20}>За маркою</MenuItem>
-                        <MenuItem value={30}>Є холод</MenuItem>
+                        <MenuItem value="rating">За рейтингом</MenuItem>
+                        <MenuItem value="type">За маркою</MenuItem>
+                        <MenuItem value="ice">Є холод</MenuItem>
                     </Select>
                 </Paper>
                 <Paper component="label" className="header-search">
                     <InputBase
                         value={search}
-                        onChange={e => setSearch(e.target.value)}
+                        onChange={e => updateSearch(e.target.value)}
                         placeholder="Знайти смак"
                         inputProps={{ 'aria-label': 'Search flavor' }}
                     />

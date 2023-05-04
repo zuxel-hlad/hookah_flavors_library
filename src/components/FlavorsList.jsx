@@ -1,8 +1,7 @@
 import FlavorItem from './FlavorItem';
 import { Grid, Typography } from '@mui/material';
-import flavors from '../data/flavors';
 
-const FlavorsList = () => {
+const FlavorsList = ({ flavors }) => {
     return (
         <Grid component="section" container spacing={2}>
             {flavors?.length ? (

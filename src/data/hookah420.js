@@ -10,6 +10,7 @@ export default [
         rating: 3,
         compound: 'Суниця',
         image: zeljanika,
+        ice: false,
     },
     {
         id: uuidv4(),
@@ -18,5 +19,6 @@ export default [
         rating: 3,
         compound: 'Ананас, Коктейль',
         image: lightLine,
+        ice: false,
     },
 ];

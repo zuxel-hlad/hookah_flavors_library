@@ -9,5 +9,6 @@ export default [
         rating: 3,
         compound: 'Вареники, Вишня',
         image: molfarPiritLine,
+        ice: false,
     },
 ];

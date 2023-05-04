@@ -16,6 +16,7 @@ export default [
         rating: 5,
         compound: 'Какао, Пиріг, Шоколад',
         image: daimBillionaire,
+        ice: false,
     },
     {
         id: uuidv4(),
@@ -24,6 +25,7 @@ export default [
         rating: 3,
         compound: "Лайм, Маракуя, М'ята, Слива",
         image: daimOzzyFozzy,
+        ice: true,
     },
     {
         id: uuidv4(),
@@ -32,6 +34,7 @@ export default [
         rating: 5,
         compound: "Лід, М'ята",
         image: daimAbsoluteZero,
+        ice: true,
     },
     {
         id: uuidv4(),
@@ -40,6 +43,7 @@ export default [
         rating: 3,
         compound: "Диня, Маракуя, М'ята, Роза",
         image: daimLove69,
+        ice: true,
     },
     {
         id: uuidv4(),
@@ -48,6 +52,7 @@ export default [
         rating: 3,
         compound: 'Кавун, Ожина, Лід, Малина, Чорниця',
         image: daimIceWaterMelonBerry,
+        ice: true,
     },
     {
         id: uuidv4(),
@@ -56,6 +61,7 @@ export default [
         rating: 3,
         compound: "Диня, Ожина, Полуниця, Малина, Манго, М'ята",
         image: daimLadyKiller,
+        ice: true,
     },
     {
         id: uuidv4(),
@@ -64,6 +70,7 @@ export default [
         rating: 3,
         compound: 'Ананас, Банан, Манго, Маракуя, Папая, Персик, Пітайя',
         image: daimAmericanQueen,
+        ice: false,
     },
     {
         id: uuidv4(),
@@ -72,5 +79,6 @@ export default [
         rating: 3,
         compound: 'Фруктовий мікс',
         image: daimTusovka,
+        ice: false,
     },
 ];
