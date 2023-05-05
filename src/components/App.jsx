@@ -5,8 +5,8 @@ import FlavorsList from './FlavorsList';
 import flavors from '../data/flavors';
 
 const containerStyles = {
-    paddingTop: '100px',
-    paddingBottom: '20px',
+    paddingTop: '88px',
+    paddingBottom: '24px',
 
     '@media screen and (max-width: 576px)': {
         paddingTop: '175px',
@@ -16,6 +16,11 @@ const containerStyles = {
 const App = () => {
     const [filter, setFilter] = useState('all');
     const [search, setSearch] = useState('');
+
+    const resetFilters = () => {
+        setFilter('all');
+        setSearch('');
+    };
 
     const searchedFlavors = useMemo(() => {
         if (search.length) {
@@ -60,6 +65,7 @@ const App = () => {
                 search={search}
                 updateSearch={setSearch}
                 updateFilter={setFilter}
+                resetFilters={resetFilters}
             />
             <Container sx={containerStyles} component="main" maxWidth="xl">
                 <FlavorsList flavors={filteredFlavors} />

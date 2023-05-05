@@ -92,9 +92,6 @@ const headerStyles = {
 
         '@media screen and (max-width: 576px)': {
             height: '33.5px',
-            '& .MuiDivider-root, & .MuiSvgIcon-root': {
-                display: 'none',
-            },
             marginLeft: 'unset',
             maxWidth: '100%',
             order: 1,
@@ -102,7 +99,13 @@ const headerStyles = {
     },
 };
 
-const Header = ({ updateSearch, updateFilter, search, filter }) => (
+const Header = ({
+    updateSearch,
+    updateFilter,
+    search,
+    filter,
+    resetFilters,
+}) => (
     <AppBar position="fixed" sx={headerStyles}>
         <Toolbar className="header-toolbar">
             <Paper component="label" className="header-filter">
@@ -136,7 +139,11 @@ const Header = ({ updateSearch, updateFilter, search, filter }) => (
                 <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
                 <SearchIcon />
             </Paper>
-            <Button className="header-reset" variant="outlined">
+            <Button
+                className="header-reset"
+                variant="contained"
+                onClick={resetFilters}
+            >
                 Скинути фільтри
             </Button>
         </Toolbar>
