@@ -27,7 +27,7 @@ const App = () => {
 
     const searchedFlavors = useMemo(() => {
         if (search.length) {
-            return [...flavors].filter((item) =>
+            return [...flavors].filter(item =>
                 item.title.toLowerCase().includes(search.toLowerCase())
             );
         }
@@ -37,23 +37,21 @@ const App = () => {
     const filteredFlavors = useMemo(() => {
         switch (filter) {
             case 'ice':
-                return searchedFlavors.filter((item) => item.ice);
+                return searchedFlavors.filter(item => item.ice);
             case 'daim':
-                return searchedFlavors.filter((item) => item.type === 'daim');
+                return searchedFlavors.filter(item => item.type === 'daim');
             case 'jibiar':
-                return searchedFlavors.filter((item) => item.type === 'jibiar');
+                return searchedFlavors.filter(item => item.type === 'jibiar');
             case 'serbetly':
-                return searchedFlavors.filter(
-                    (item) => item.type === 'serbetly'
-                );
+                return searchedFlavors.filter(item => item.type === 'serbetly');
             case 'molfar':
-                return searchedFlavors.filter((item) => item.type === 'molfar');
+                return searchedFlavors.filter(item => item.type === 'molfar');
             case 'adalya':
-                return searchedFlavors.filter((item) => item.type === 'adalya');
+                return searchedFlavors.filter(item => item.type === 'adalya');
             case 'lira':
-                return searchedFlavors.filter((item) => item.type === 'lira');
+                return searchedFlavors.filter(item => item.type === 'lira');
             case '420':
-                return searchedFlavors.filter((item) => item.type === '420');
+                return searchedFlavors.filter(item => item.type === '420');
             case 'rating':
                 return [...searchedFlavors].sort((a, b) => b.rating - a.rating);
             default:

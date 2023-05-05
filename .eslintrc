@@ -57,7 +57,8 @@
                 "tabWidth": 4,
                 "semi": true,
                 "endOfLine": "auto",
-                "singleAttributePerLine": true
+                "singleAttributePerLine": true,
+                "arrowParens": "avoid"
             }
         ]
     }

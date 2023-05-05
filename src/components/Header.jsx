@@ -119,7 +119,7 @@ const Header = ({
                     labelId="demo-select-small-label"
                     id="demo-select-small"
                     value={filter}
-                    onChange={(e) => updateFilter(e.target.value)}
+                    onChange={e => updateFilter(e.target.value)}
                 >
                     <MenuItem value="all">
                         <em>Усі</em>
@@ -141,7 +141,7 @@ const Header = ({
             >
                 <InputBase
                     value={search}
-                    onChange={(e) => updateSearch(e.target.value)}
+                    onChange={e => updateSearch(e.target.value)}
                     placeholder="Знайти смак"
                     inputProps={{ 'aria-label': 'Search flavor' }}
                 />
