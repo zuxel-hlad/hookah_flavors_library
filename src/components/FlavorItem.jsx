@@ -9,7 +9,8 @@ import {
 } from '@mui/material';
 
 const FlavorItem = ({ flavor, tabIndex }) => {
-    const { title, type, rating, compound, image } = flavor;
+    const { title, rating, compound, image } = flavor;
+
     return (
         <Grid item xs={12} sm={6} md={4} lg={3}>
             <Card
