@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useCallback } from 'react';
 import { Container } from '@mui/material';
 import Header from './Header';
 import FlavorsList from './FlavorsList';
@@ -17,10 +17,11 @@ const App = () => {
     const [filter, setFilter] = useState('all');
     const [search, setSearch] = useState('');
 
-    const resetFilters = () => {
+    const resetFilters = useCallback(() => {
+        if (!filter || !search) return;
         setFilter('all');
         setSearch('');
-    };
+    }, [filter, search]);
 
     const searchedFlavors = useMemo(() => {
         if (search.length) {
