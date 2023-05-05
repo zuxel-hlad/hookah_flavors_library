@@ -18,9 +18,11 @@ const App = () => {
     const [search, setSearch] = useState('');
 
     const resetFilters = useCallback(() => {
-        if (!filter || !search) return;
-        setFilter('all');
-        setSearch('');
+        if (filter !== 'all' || search.length > 0) {
+            setFilter('all');
+            setSearch('');
+        }
+        return undefined;
     }, [filter, search]);
 
     const searchedFlavors = useMemo(() => {
