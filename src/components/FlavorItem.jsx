@@ -7,7 +7,6 @@ import {
     Box,
     Rating,
 } from '@mui/material';
-import GradeIcon from '@mui/icons-material/Grade';
 
 const FlavorItem = ({ flavor, tabIndex }) => {
     const { title, type, rating, compound, image } = flavor;
