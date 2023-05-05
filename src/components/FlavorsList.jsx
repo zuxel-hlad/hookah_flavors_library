@@ -2,10 +2,18 @@ import { Grid, Typography } from '@mui/material';
 import FlavorItem from './FlavorItem';
 
 const FlavorsList = ({ flavors }) => (
-    <Grid component="section" container spacing={2}>
+    <Grid
+        component="section"
+        container
+        spacing={2}
+    >
         {flavors?.length ? (
             flavors.map((flavor, idx) => (
-                <FlavorItem tabIndex={idx} key={flavor.id} flavor={flavor} />
+                <FlavorItem
+                    tabIndex={idx}
+                    key={flavor.id}
+                    flavor={flavor}
+                />
             ))
         ) : (
             <Typography

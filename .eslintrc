@@ -15,6 +15,9 @@
     },
     "plugins": ["prettier", "react", "react-hooks", "html"],
     "rules": {
+        "camelcase": "error",
+        "spaced-comment": "error",
+        "no-duplicate-imports": "error",
         "import/no-extraneous-dependencies": [
             "error",
             {
@@ -53,7 +56,8 @@
                 "printWidth": 80,
                 "tabWidth": 4,
                 "semi": true,
-                "endOfLine": "auto"
+                "endOfLine": "auto",
+                "singleAttributePerLine": true
             }
         ]
     }

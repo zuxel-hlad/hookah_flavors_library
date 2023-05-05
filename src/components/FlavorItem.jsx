@@ -12,7 +12,13 @@ const FlavorItem = ({ flavor, tabIndex }) => {
     const { title, rating, compound, image } = flavor;
 
     return (
-        <Grid item xs={12} sm={6} md={4} lg={3}>
+        <Grid
+            item
+            xs={12}
+            sm={6}
+            md={4}
+            lg={3}
+        >
             <Card
                 sx={{
                     height: '100%',
@@ -36,15 +42,26 @@ const FlavorItem = ({ flavor, tabIndex }) => {
                     />
                 </Box>
                 <CardContent sx={{ flexGrow: 1 }}>
-                    <Typography gutterBottom variant="h5" component="div">
+                    <Typography
+                        gutterBottom
+                        variant="h5"
+                        component="div"
+                    >
                         {title}
                     </Typography>
-                    <Typography variant="body2" color="text.secondary">
+                    <Typography
+                        variant="body2"
+                        color="text.secondary"
+                    >
                         {compound}
                     </Typography>
                 </CardContent>
                 <Box sx={{ padding: '0 16px 16px' }}>
-                    <Rating name="flavor-rating" value={rating} readOnly />
+                    <Rating
+                        name="flavor-rating"
+                        value={rating}
+                        readOnly
+                    />
                 </Box>
             </Card>
         </Grid>

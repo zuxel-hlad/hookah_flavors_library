@@ -67,7 +67,11 @@ const App = () => {
                 updateFilter={setFilter}
                 resetFilters={resetFilters}
             />
-            <Container sx={containerStyles} component="main" maxWidth="xl">
+            <Container
+                sx={containerStyles}
+                component="main"
+                maxWidth="xl"
+            >
                 <FlavorsList flavors={filteredFlavors} />
             </Container>
         </div>
