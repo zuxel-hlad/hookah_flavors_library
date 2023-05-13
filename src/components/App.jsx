@@ -1,4 +1,4 @@
-import { useState, useMemo, useCallback } from 'react';
+import { useState, useMemo } from 'react';
 import { Container } from '@mui/material';
 import Header from './Header';
 import FlavorsList from './FlavorsList';
@@ -14,26 +14,46 @@ const containerStyles = {
 };
 
 const App = () => {
+    // statements
+    const [allFlavors, setAllFlavors] = useState(flavors);
     const [filter, setFilter] = useState('all');
     const [search, setSearch] = useState('');
 
-    const resetFilters = useCallback(() => {
+    // update flavor rating
+    const updateFlavorRating = (rating, id) => {
+        setAllFlavors(
+            allFlavors.map(item => {
+                if (item.id === id) {
+                    return {
+                        ...item,
+                        rating,
+                    };
+                }
+                return item;
+            })
+        );
+    };
+
+    // reset all filters
+    const resetFilters = () => {
         if (filter !== 'all' || search.length > 0) {
             setFilter('all');
             setSearch('');
         }
         return undefined;
-    }, [filter, search]);
+    };
 
+    // find flavor
     const searchedFlavors = useMemo(() => {
         if (search.length) {
-            return [...flavors].filter(item =>
+            return [...allFlavors].filter(item =>
                 item.title.toLowerCase().includes(search.toLowerCase())
             );
         }
-        return flavors;
-    }, [search]);
+        return allFlavors;
+    }, [search, allFlavors]);
 
+    // filter flavors
     const filteredFlavors = useMemo(() => {
         switch (filter) {
             case 'ice':
@@ -73,7 +93,10 @@ const App = () => {
                 component="main"
                 maxWidth="xl"
             >
-                <FlavorsList flavors={filteredFlavors} />
+                <FlavorsList
+                    flavors={filteredFlavors}
+                    updateFlavorRating={updateFlavorRating}
+                />
             </Container>
         </div>
     );

@@ -8,8 +8,8 @@ import {
     Rating,
 } from '@mui/material';
 
-const FlavorItem = ({ flavor, tabIndex }) => {
-    const { title, rating, compound, image } = flavor;
+const FlavorItem = ({ flavor, tabIndex, updateFlavorRating }) => {
+    const { title, rating, compound, image, id } = flavor;
 
     return (
         <Grid
@@ -56,11 +56,18 @@ const FlavorItem = ({ flavor, tabIndex }) => {
                         {compound}
                     </Typography>
                 </CardContent>
-                <Box sx={{ padding: '0 16px 16px' }}>
+                <Box
+                    sx={{
+                        padding: '0 16px 16px',
+                    }}
+                >
                     <Rating
-                        name="flavor-rating"
                         value={rating}
-                        readOnly
+                        precision={0.5}
+                        size="large"
+                        onChange={(_, newRating) => {
+                            updateFlavorRating(newRating, id);
+                        }}
                     />
                 </Box>
             </Card>
