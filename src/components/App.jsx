@@ -3,7 +3,7 @@ import { Container } from '@mui/material';
 import Header from './Header';
 import FlavorsList from './FlavorsList';
 import Loader from './Loader';
-// import flavors from '../data/flavors';
+import flavors from '../data/flavors';
 
 const containerStyles = {
     paddingTop: '88px',
@@ -17,7 +17,7 @@ const containerStyles = {
 const App = () => {
     // statements
     const [loading, setLoading] = useState(false);
-    const [allFlavors, setAllFlavors] = useState([]);
+    const [allFlavors, setAllFlavors] = useState(flavors);
     const [filter, setFilter] = useState('all');
     const [search, setSearch] = useState('');
 
@@ -53,7 +53,7 @@ const App = () => {
     // };
     useEffect(() => {
         // addFlavor();
-        getFlavors();
+        // getFlavors();
     }, []);
 
     // update flavor rating
