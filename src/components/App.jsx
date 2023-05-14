@@ -1,8 +1,9 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { Container } from '@mui/material';
 import Header from './Header';
 import FlavorsList from './FlavorsList';
-import flavors from '../data/flavors';
+import Loader from './Loader';
+// import flavors from '../data/flavors';
 
 const containerStyles = {
     paddingTop: '88px',
@@ -15,23 +16,68 @@ const containerStyles = {
 
 const App = () => {
     // statements
-    const [allFlavors, setAllFlavors] = useState(flavors);
+    const [loading, setLoading] = useState(false);
+    const [allFlavors, setAllFlavors] = useState([]);
     const [filter, setFilter] = useState('all');
     const [search, setSearch] = useState('');
 
+    const getFlavors = async () => {
+        try {
+            setLoading(true);
+            const data = await fetch(
+                'https://shop-app-6c9a6-default-rtdb.firebaseio.com/flavors.json'
+            );
+            const res = await data.json();
+            setAllFlavors(res[Object.keys(res)[0]]);
+        } catch (e) {
+            console.log(e);
+        } finally {
+            setLoading(false);
+        }
+
+        // console.log();
+    };
+
+    // const addFlavor = async () => {
+    //     const data = await fetch(
+    //         `https://shop-app-6c9a6-default-rtdb.firebaseio.com/flavors.json`,
+    //         {
+    //             method: 'POST',
+    //             headers: {
+    //                 'Content-Type': 'application/json',
+    //             },
+    //             body: JSON.stringify(flavors),
+    //         }
+    //     );
+    //     console.log(data);
+    // };
+    useEffect(() => {
+        // addFlavor();
+        getFlavors();
+    }, []);
+
     // update flavor rating
-    const updateFlavorRating = (rating, id) => {
-        setAllFlavors(
-            allFlavors.map(item => {
-                if (item.id === id) {
-                    return {
-                        ...item,
-                        rating,
-                    };
+    const updateFlavorRating = async (rating, id) => {
+        const idx = allFlavors.findIndex(item => item.id === id);
+        setLoading(true);
+        try {
+            const data = await fetch(
+                `https://shop-app-6c9a6-default-rtdb.firebaseio.com/flavors/-NVQi6TOEc4HaCKJygra/${idx}.json`,
+                {
+                    method: 'PATCH',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ rating }),
                 }
-                return item;
-            })
-        );
+            );
+            console.log(data);
+            getFlavors();
+        } catch (e) {
+            console.log(e);
+        } finally {
+            setLoading(false);
+        }
     };
 
     // reset all filters
@@ -98,6 +144,7 @@ const App = () => {
                     updateFlavorRating={updateFlavorRating}
                 />
             </Container>
+            {loading && <Loader />}
         </div>
     );
 };
