@@ -7,6 +7,7 @@ import daimIceWaterMelonBerry from '../assets/img/daim/Tabak-Daim-Ice-Watermelon
 import daimLadyKiller from '../assets/img/daim/Tabak-Daim-Lady-Killer-Ledi-Killer-50gr.webp';
 import daimAmericanQueen from '../assets/img/daim/Tabak-Daim-American-Queen-Amerikan-Kvin-50gr.webp';
 import daimTusovka from '../assets/img/daim/daim_tusovka.jpg';
+import daimEgzotica from '../assets/img/daim/Tabak-Daim-Egzotica-Egzotika-50gr.jpg';
 
 export default [
     {
@@ -79,6 +80,15 @@ export default [
         rating: 3,
         compound: 'Фруктовий мікс',
         image: daimTusovka,
+        ice: false,
+    },
+    {
+        id: uuidv4(),
+        title: 'Daim - Egzotica',
+        type: 'daim',
+        rating: 3,
+        compound: 'Мультіфрукт',
+        image: daimEgzotica,
         ice: false,
     },
 ];

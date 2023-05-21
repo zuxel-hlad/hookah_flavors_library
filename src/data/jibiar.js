@@ -7,6 +7,8 @@ import jibiarAmourInfini from '../assets/img/jibiar/Tabak-JIBIAR-Amour-Infini-Am
 import jibiarSantaBarbara from '../assets/img/jibiar/Tabak-JIBIAR-Santa-Barbara-Santa-Barbara-50-gr.webp';
 import jibiarGreenMix from '../assets/img/jibiar/Tabak-JIBIAR-Green-Mix-Grin-Miks-50-gr.webp';
 import jibiarIceCola from '../assets/img/jibiar/Tabak-JIBIAR-Ice-Cola-Kola-Led-50-gr.webp';
+import jibiarPanRaas from '../assets/img/jibiar/Tabak-JIBIAR-Pan-Raas-Pan-Raas-50gr.webp';
+import jibiarHavana from '../assets/img/jibiar/Tabak-JIBIAR-Havana-Gavana-50gr.webp';
 
 export default [
     {
@@ -80,5 +82,23 @@ export default [
         compound: 'Кола, Лід',
         image: jibiarIceCola,
         ice: true,
+    },
+    {
+        id: uuidv4(),
+        title: 'Jibiar HAVANA',
+        type: 'jibiar',
+        rating: 3,
+        compound: 'Ананас, Маракуйя, Пітая',
+        image: jibiarHavana,
+        ice: false,
+    },
+    {
+        id: uuidv4(),
+        title: 'Jibiar PAN RAAS',
+        type: 'jibiar',
+        rating: 1,
+        compound: 'Спеції',
+        image: jibiarPanRaas,
+        ice: false,
     },
 ];

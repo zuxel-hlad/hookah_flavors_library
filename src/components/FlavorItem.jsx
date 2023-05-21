@@ -65,7 +65,6 @@ const FlavorItem = ({ flavor, tabIndex, updateFlavorRating }) => {
                         value={rating}
                         precision={0.5}
                         size="large"
-                        readOnly
                         onChange={(_, newRating) => {
                             updateFlavorRating(newRating, id);
                         }}
