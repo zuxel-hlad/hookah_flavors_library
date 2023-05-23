@@ -6,7 +6,6 @@ import Loader from './Loader';
 import useApi from '../api/index';
 import useFilter from '../hooks/filter.hook';
 import useSearch from '../hooks/search.hook';
-// import flavors from '../data/flavors';
 
 const containerStyles = {
     paddingTop: '88px',

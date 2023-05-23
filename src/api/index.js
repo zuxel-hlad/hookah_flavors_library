@@ -11,6 +11,11 @@ const useApi = () => {
             id: flavor,
         }));
     };
+
+    const addFlavor = async flavor => {
+        await request(`${apiBase}flavors.json`, 'POST', JSON.stringify(flavor));
+    };
+
     const updateRating = async (id, rating) => {
         await request(
             `${apiBase}flavors/${id}.json`,
@@ -25,6 +30,7 @@ const useApi = () => {
         getFlavors,
         error,
         updateRating,
+        addFlavor,
     };
 };
 
