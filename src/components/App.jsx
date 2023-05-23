@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Container } from '@mui/material';
+import { Container, Alert } from '@mui/material';
 import Header from './Header';
 import FlavorsList from './FlavorsList';
 import Loader from './Loader';
@@ -16,12 +16,20 @@ const containerStyles = {
     },
 };
 
+const alertStyles = {
+    textAlign: 'center',
+    maxWidth: '280px',
+    display: 'flex',
+    alignItems: 'center',
+    margin: '0 auto',
+};
+
 const App = () => {
     // statements
     const [allFlavors, setAllFlavors] = useState([]);
     const [filter, setFilter] = useState('all');
     const [search, setSearch] = useState('');
-    const { getFlavors, loading, updateRating } = useApi();
+    const { getFlavors, loading, updateRating, error } = useApi();
 
     // update flavor rating
     const updateFlavorRating = async (rating, id) => {
@@ -73,12 +81,23 @@ const App = () => {
                 component="main"
                 maxWidth="xl"
             >
-                <FlavorsList
-                    flavors={filteredFlavors}
-                    updateFlavorRating={updateFlavorRating}
-                />
+                {!error && (
+                    <FlavorsList
+                        flavors={filteredFlavors}
+                        updateFlavorRating={updateFlavorRating}
+                    />
+                )}
             </Container>
             {loading && <Loader />}
+            {error && (
+                <Alert
+                    severity="error"
+                    sx={alertStyles}
+                >
+                    Сталася помилка. <br />
+                    Будь ласка оновіть сторінку.
+                </Alert>
+            )}
         </div>
     );
 };
