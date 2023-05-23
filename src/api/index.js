@@ -1,7 +1,7 @@
 import useHttp from '../hooks/http.hook';
 
 const useApi = () => {
-    const { request, clearError, loading, error } = useHttp();
+    const { request, clearError, loading, error, setLoading } = useHttp();
     const apiBase = 'https://shop-app-6c9a6-default-rtdb.firebaseio.com/';
 
     const getFlavors = async () => {
@@ -31,6 +31,7 @@ const useApi = () => {
         error,
         updateRating,
         addFlavor,
+        setLoading,
     };
 };
 

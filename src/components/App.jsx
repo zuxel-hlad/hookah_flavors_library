@@ -29,10 +29,12 @@ const App = () => {
     const [allFlavors, setAllFlavors] = useState([]);
     const [filter, setFilter] = useState('all');
     const [search, setSearch] = useState('');
+    const [flavorRatingLoading, setFlavorRatingLoading] = useState(false);
     const { getFlavors, loading, updateRating, error } = useApi();
 
     // update flavor rating
     const updateFlavorRating = async (rating, id) => {
+        setFlavorRatingLoading(true);
         setAllFlavors(
             allFlavors.map(f => {
                 if (f.id === id) {
@@ -45,6 +47,7 @@ const App = () => {
             })
         );
         await updateRating(id, rating);
+        setFlavorRatingLoading(false);
     };
 
     // reset all filters
@@ -85,10 +88,11 @@ const App = () => {
                     <FlavorsList
                         flavors={filteredFlavors}
                         updateFlavorRating={updateFlavorRating}
+                        flavorRatingLoading={flavorRatingLoading}
                     />
                 )}
             </Container>
-            {loading && <Loader />}
+            {loading && !flavorRatingLoading && <Loader />}
             {error && (
                 <Alert
                     severity="error"

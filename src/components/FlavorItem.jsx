@@ -8,7 +8,12 @@ import {
 } from '@mui/material';
 import LazyImage from './LazyImage';
 
-const FlavorItem = ({ flavor, tabIndex, updateFlavorRating }) => {
+const FlavorItem = ({
+    flavor,
+    tabIndex,
+    updateFlavorRating,
+    flavorRatingLoading,
+}) => {
     const { title, rating, compound, image, id } = flavor;
 
     return (
@@ -57,6 +62,7 @@ const FlavorItem = ({ flavor, tabIndex, updateFlavorRating }) => {
                     <Rating
                         value={rating}
                         size="large"
+                        disabled={flavorRatingLoading}
                         onChange={(_, newRating) => {
                             updateFlavorRating(newRating, id);
                         }}
