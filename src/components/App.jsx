@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Container, Alert } from '@mui/material';
+import { Container, Alert, Snackbar } from '@mui/material';
 import Header from './Header';
 import FlavorsList from './FlavorsList';
 import Loader from './Loader';
@@ -88,7 +88,6 @@ const App = () => {
                     <FlavorsList
                         flavors={filteredFlavors}
                         updateFlavorRating={updateFlavorRating}
-                        flavorRatingLoading={flavorRatingLoading}
                     />
                 )}
             </Container>
@@ -102,6 +101,14 @@ const App = () => {
                     Будь ласка оновіть сторінку.
                 </Alert>
             )}
+            <Snackbar open={flavorRatingLoading && !error}>
+                <Alert
+                    severity="success"
+                    sx={{ width: '100%' }}
+                >
+                    Рейтинг успішно змінено!
+                </Alert>
+            </Snackbar>
         </div>
     );
 };

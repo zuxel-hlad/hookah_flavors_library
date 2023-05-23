@@ -1,11 +1,7 @@
 import { Grid, Typography } from '@mui/material';
 import FlavorItem from './FlavorItem';
 
-const FlavorsList = ({
-    flavors = [],
-    updateFlavorRating,
-    flavorRatingLoading,
-}) => (
+const FlavorsList = ({ flavors = [], updateFlavorRating }) => (
     <Grid
         component="section"
         container
@@ -18,7 +14,6 @@ const FlavorsList = ({
                     key={flavor.id}
                     flavor={flavor}
                     updateFlavorRating={updateFlavorRating}
-                    flavorRatingLoading={flavorRatingLoading}
                 />
             ))
         ) : (

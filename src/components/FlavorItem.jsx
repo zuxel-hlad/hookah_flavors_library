@@ -6,16 +6,10 @@ import {
     Box,
     Rating,
 } from '@mui/material';
-import { useState } from 'react';
+
 import LazyImage from './LazyImage';
 
-const FlavorItem = ({
-    flavor,
-    tabIndex,
-    updateFlavorRating,
-    flavorRatingLoading,
-}) => {
-    const [updatedId, setUpdatedId] = useState(null);
+const FlavorItem = ({ flavor, tabIndex, updateFlavorRating }) => {
     const { title, rating, compound, image, id } = flavor;
 
     return (
@@ -64,11 +58,8 @@ const FlavorItem = ({
                     <Rating
                         value={rating}
                         size="large"
-                        disabled={flavorRatingLoading && updatedId === id}
                         onChange={(_, newRating) => {
-                            setUpdatedId(id);
                             updateFlavorRating(newRating, id);
-                            setTimeout(() => setUpdatedId(null), 200);
                         }}
                     />
                 </Box>
