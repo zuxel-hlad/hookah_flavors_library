@@ -2,11 +2,11 @@ import {
     Grid,
     Card,
     CardContent,
-    CardMedia,
     Typography,
     Box,
     Rating,
 } from '@mui/material';
+import LazyImage from './LazyImage';
 
 const FlavorItem = ({ flavor, tabIndex, updateFlavorRating }) => {
     const { title, rating, compound, image, id } = flavor;
@@ -29,15 +29,8 @@ const FlavorItem = ({ flavor, tabIndex, updateFlavorRating }) => {
                 tabIndex={tabIndex + 1}
             >
                 <Box sx={{ padding: '16px', height: '330px' }}>
-                    <CardMedia
-                        sx={{
-                            height: '100%',
-                            width: '100%',
-                            objectFit: 'contain',
-                        }}
-                        image={image}
-                        title={title}
-                        component="img"
+                    <LazyImage
+                        src={image}
                         alt={title}
                     />
                 </Box>
@@ -63,7 +56,6 @@ const FlavorItem = ({ flavor, tabIndex, updateFlavorRating }) => {
                 >
                     <Rating
                         value={rating}
-                        precision={0.5}
                         size="large"
                         onChange={(_, newRating) => {
                             updateFlavorRating(newRating, id);
