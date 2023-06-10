@@ -50,6 +50,19 @@ const App = () => {
         setFlavorRatingLoading(false);
     };
 
+    // const addNewFlavor = async () => {
+    //     await addFlavor({
+    //         id: uuidv4(),
+    //         title: 'Daim - Spiced Peach',
+    //         type: 'daim',
+    //         rating: 3,
+    //         compound: 'Гриль , Персик',
+    //         image: '',
+    //         ice: false,
+    //     });
+    //     console.log('flavor was added');
+    // };
+
     // reset all filters
     const resetFilters = () => {
         if (filter !== 'all' || search.length > 0) {

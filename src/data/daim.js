@@ -8,6 +8,7 @@ import daimLadyKiller from '../assets/img/daim/Tabak-Daim-Lady-Killer-Ledi-Kille
 import daimAmericanQueen from '../assets/img/daim/Tabak-Daim-American-Queen-Amerikan-Kvin-50gr.webp';
 import daimTusovka from '../assets/img/daim/daim_tusovka.jpg';
 import daimEgzotica from '../assets/img/daim/Tabak-Daim-Egzotica-Egzotika-50gr.jpg';
+import daimSpicedPeach from '../assets/img/daim/Tabak-Daim-Spiced-Peach-Pryanyy-Persik-50gr.webp';
 
 export default [
     {
@@ -89,6 +90,15 @@ export default [
         rating: 3,
         compound: 'Мультіфрукт',
         image: daimEgzotica,
+        ice: false,
+    },
+    {
+        id: uuidv4(),
+        title: 'Daim - Spiced Peach',
+        type: 'daim',
+        rating: 3,
+        compound: 'Гриль , Персик',
+        image: daimSpicedPeach,
         ice: false,
     },
 ];
