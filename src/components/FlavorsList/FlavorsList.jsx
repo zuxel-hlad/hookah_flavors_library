@@ -1,11 +1,13 @@
 import { Grid, Typography } from '@mui/material';
-import FlavorItem from './FlavorItem';
+import FlavorItem from '../FlavorItem/FlavorItem';
+import styles from './FlavorsList.module.scss';
 
 const FlavorsList = ({ flavors = [], updateFlavorRating }) => (
     <Grid
         component="section"
         container
         spacing={2}
+        className={styles.flavorsList}
     >
         {flavors?.length ? (
             flavors.map((flavor, idx) => (
@@ -21,7 +23,8 @@ const FlavorsList = ({ flavors = [], updateFlavorRating }) => (
                 variant="h4"
                 color="text.secondary"
                 component="h6"
-                sx={{ margin: '0 auto' }}
+                className={styles.flavorsListEmpty}
+                align="center"
             >
                 Смаків покищо не знайдено.
             </Typography>

@@ -1,0 +1,81 @@
+.header {
+    & .headerToolbar {
+        display: 'flex';
+        justify-content: space-between;
+        align-items: 'center';
+        gap: 10px;
+        background: rgb(10, 25, 41);
+
+        @media screen and (max-width: 576px) {
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 16px;
+        }
+    }
+    & .headerFilter {
+        width: 100%;
+        max-width: 200px;
+        display: flex;
+
+        .headerSelect {
+            width: 100%;
+            height: 36.5px;
+
+            div {
+                width: 100%;
+                padding: 6px 30px 6px 12px;
+            }
+
+            fieldset {
+                padding: 0;
+                height: auto;
+            }
+        }
+
+        @media screen and (max-width: 576px) {
+            order: 2;
+            max-width: 100%;
+        }
+    }
+
+    & .headerSearch {
+        padding: 0 6px 0 12px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        max-width: 200px;
+        height: 36.5px;
+        box-shadow: none;
+        border: 2px solid transparent;
+        margin-left: auto;
+
+        &:active {
+            border-color: #1976d2;
+        }
+
+        &:focus-visible {
+            outline-color: #1976d2;
+        }
+
+        & .MuiDivider-root {
+            height: 22.5px;
+        }
+
+        @media screen and (max-width: 576px) {
+            height: 33.5px;
+            margin-left: unset;
+            min-width: 100%;
+            order: 1;
+        }
+    }
+
+    & .headerReset {
+        flex-shrink: 0;
+
+        @media screen and (max-width: 576px) {
+            order: 3;
+            width: 100%;
+        }
+    }
+}

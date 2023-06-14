@@ -1,29 +1,13 @@
 import { useState, useEffect } from 'react';
 import { Container, Alert, Snackbar } from '@mui/material';
-import { v4 as uuidv4 } from 'uuid';
-import Header from './Header';
-import FlavorsList from './FlavorsList';
-import Loader from './Loader';
-import useApi from '../api/index';
-import useFilter from '../hooks/filter.hook';
-import useSearch from '../hooks/search.hook';
-
-const containerStyles = {
-    paddingTop: '88px',
-    paddingBottom: '24px',
-
-    '@media screen and (max-width: 576px)': {
-        paddingTop: '175px',
-    },
-};
-
-const alertStyles = {
-    textAlign: 'center',
-    maxWidth: '280px',
-    display: 'flex',
-    alignItems: 'center',
-    margin: '0 auto',
-};
+// import { v4 as uuidv4 } from 'uuid';
+import Header from '../Header/Header';
+import FlavorsList from '../FlavorsList/FlavorsList';
+import Loader from '../Loader/Loader';
+import useApi from '../../api/index';
+import useFilter from '../../hooks/filter.hook';
+import useSearch from '../../hooks/search.hook';
+import styles from './App.module.scss';
 
 const App = () => {
     // statements
@@ -31,7 +15,7 @@ const App = () => {
     const [filter, setFilter] = useState('all');
     const [search, setSearch] = useState('');
     const [flavorRatingLoading, setFlavorRatingLoading] = useState(false);
-    const { getFlavors, loading, updateRating, error, addFlavor } = useApi();
+    const { getFlavors, loading, updateRating, error } = useApi();
 
     // update flavor rating
     const updateFlavorRating = async (rating, id) => {
@@ -51,18 +35,18 @@ const App = () => {
         setFlavorRatingLoading(false);
     };
 
-    const addNewFlavor = async () => {
-        await addFlavor({
-            id: uuidv4(),
-            title: 'ZODIAC - SOUR BERRIES',
-            type: 'zodiac',
-            rating: 5,
-            compound: 'Бузина, Клюква, Красная Смородина',
-            image: '',
-            ice: false,
-        });
-        console.log('flavor was added');
-    };
+    // const addNewFlavor = async () => {
+    //     await addFlavor({
+    //         id: uuidv4(),
+    //         title: 'ZODIAC - SOUR BERRIES',
+    //         type: 'zodiac',
+    //         rating: 5,
+    //         compound: 'Бузина, Клюква, Красная Смородина',
+    //         image: '',
+    //         ice: false,
+    //     });
+    //     console.log('flavor was added');
+    // };
 
     // reset all filters
     const resetFilters = () => {
@@ -85,7 +69,7 @@ const App = () => {
     }, [setAllFlavors]);
 
     return (
-        <div className="app">
+        <div className={styles.app}>
             <Header
                 filter={filter}
                 search={search}
@@ -94,16 +78,16 @@ const App = () => {
                 resetFilters={resetFilters}
             />
             <Container
-                sx={containerStyles}
                 component="main"
                 maxWidth="xl"
+                className={styles.main}
             >
-                <button
+                {/* <button
                     type="button"
                     onClick={addNewFlavor}
                 >
                     ADD FLAVOR
-                </button>
+                </button> */}
                 {!error && (
                     <FlavorsList
                         flavors={filteredFlavors}
@@ -115,19 +99,14 @@ const App = () => {
             {error && (
                 <Alert
                     severity="error"
-                    sx={alertStyles}
+                    className={styles.errorAlert}
                 >
                     Сталася помилка. <br />
                     Будь ласка оновіть сторінку.
                 </Alert>
             )}
             <Snackbar open={flavorRatingLoading && !error}>
-                <Alert
-                    severity="success"
-                    sx={{ width: '100%' }}
-                >
-                    Рейтинг успішно змінено!
-                </Alert>
+                <Alert severity="success">Рейтинг успішно змінено!</Alert>
             </Snackbar>
         </div>
     );
