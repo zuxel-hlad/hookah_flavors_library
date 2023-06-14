@@ -8,6 +8,7 @@ import {
 } from '@mui/material';
 
 import LazyImage from './LazyImage';
+import defaultFlavor from '../assets/img/default_flavor.png';
 
 const FlavorItem = ({ flavor, tabIndex, updateFlavorRating }) => {
     const { title, rating, compound, image, id } = flavor;
@@ -30,10 +31,18 @@ const FlavorItem = ({ flavor, tabIndex, updateFlavorRating }) => {
                 tabIndex={tabIndex + 1}
             >
                 <Box sx={{ padding: '16px', height: '330px' }}>
-                    <LazyImage
-                        src={image}
-                        alt={title}
-                    />
+                    {image && (
+                        <LazyImage
+                            src={image}
+                            alt={title}
+                        />
+                    )}
+                    {!image && (
+                        <LazyImage
+                            src={defaultFlavor}
+                            alt={title}
+                        />
+                    )}
                 </Box>
                 <CardContent sx={{ flexGrow: 1 }}>
                     <Typography

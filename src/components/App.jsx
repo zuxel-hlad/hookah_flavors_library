@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Container, Alert, Snackbar } from '@mui/material';
+import { v4 as uuidv4 } from 'uuid';
 import Header from './Header';
 import FlavorsList from './FlavorsList';
 import Loader from './Loader';
@@ -30,7 +31,7 @@ const App = () => {
     const [filter, setFilter] = useState('all');
     const [search, setSearch] = useState('');
     const [flavorRatingLoading, setFlavorRatingLoading] = useState(false);
-    const { getFlavors, loading, updateRating, error } = useApi();
+    const { getFlavors, loading, updateRating, error, addFlavor } = useApi();
 
     // update flavor rating
     const updateFlavorRating = async (rating, id) => {
@@ -50,18 +51,18 @@ const App = () => {
         setFlavorRatingLoading(false);
     };
 
-    // const addNewFlavor = async () => {
-    //     await addFlavor({
-    //         id: uuidv4(),
-    //         title: 'Daim - Spiced Peach',
-    //         type: 'daim',
-    //         rating: 3,
-    //         compound: 'Гриль , Персик',
-    //         image: '',
-    //         ice: false,
-    //     });
-    //     console.log('flavor was added');
-    // };
+    const addNewFlavor = async () => {
+        await addFlavor({
+            id: uuidv4(),
+            title: 'ZODIAC - SOUR BERRIES',
+            type: 'zodiac',
+            rating: 5,
+            compound: 'Бузина, Клюква, Красная Смородина',
+            image: '',
+            ice: false,
+        });
+        console.log('flavor was added');
+    };
 
     // reset all filters
     const resetFilters = () => {
@@ -81,7 +82,7 @@ const App = () => {
     useEffect(() => {
         getFlavors().then(data => setAllFlavors(data));
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    }, [setAllFlavors]);
 
     return (
         <div className="app">
@@ -97,6 +98,12 @@ const App = () => {
                 component="main"
                 maxWidth="xl"
             >
+                <button
+                    type="button"
+                    onClick={addNewFlavor}
+                >
+                    ADD FLAVOR
+                </button>
                 {!error && (
                     <FlavorsList
                         flavors={filteredFlavors}

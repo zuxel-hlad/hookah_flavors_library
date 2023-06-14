@@ -17,6 +17,10 @@ const useFilter = (filter, filterArray) =>
                 return filterArray.filter(item => item.type === 'adalya');
             case 'lira':
                 return filterArray.filter(item => item.type === 'lira');
+            case 'zodiac':
+                return filterArray.filter(item => item.type === 'zodiac');
+            case 'diamond':
+                return filterArray.filter(item => item.type === 'diamond');
             case '420':
                 return filterArray.filter(item => item.type === '420');
             case 'rating':

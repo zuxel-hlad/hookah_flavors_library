@@ -9,6 +9,7 @@ import {
     Button,
 } from '@mui/material';
 import { Search as SearchIcon } from '@mui/icons-material';
+import filterOptions from '../data/flavorsFilter';
 
 const headerStyles = {
     background: 'rgb(10, 25, 41)',
@@ -121,18 +122,15 @@ const Header = ({
                     value={filter}
                     onChange={e => updateFilter(e.target.value)}
                 >
-                    <MenuItem value="all">
-                        <em>Усі</em>
-                    </MenuItem>
-                    <MenuItem value="rating">За рейтингом</MenuItem>
-                    <MenuItem value="daim">Daim</MenuItem>
-                    <MenuItem value="jibiar">Jibiar</MenuItem>
-                    <MenuItem value="serbetly">Serbetli</MenuItem>
-                    <MenuItem value="lira">Lira</MenuItem>
-                    <MenuItem value="molfar">Molfar</MenuItem>
-                    <MenuItem value="420">420</MenuItem>
-                    <MenuItem value="adalya">Adalya</MenuItem>
-                    <MenuItem value="ice">Є холод</MenuItem>
+                    {filterOptions &&
+                        filterOptions.map(({ id, label, value }) => (
+                            <MenuItem
+                                value={value}
+                                key={id}
+                            >
+                                {label}
+                            </MenuItem>
+                        ))}
                 </Select>
             </Paper>
             <Paper
