@@ -9,6 +9,7 @@ import daimAmericanQueen from '../assets/img/daim/Tabak-Daim-American-Queen-Amer
 import daimTusovka from '../assets/img/daim/daim_tusovka.jpg';
 import daimEgzotica from '../assets/img/daim/Tabak-Daim-Egzotica-Egzotika-50gr.jpg';
 import daimSpicedPeach from '../assets/img/daim/Tabak-Daim-Spiced-Peach-Pryanyy-Persik-50gr.webp';
+import daimBayraktar from '../assets/img/daim/Tabak-Daim-Bayraktar-Bayraktar-50gr.webp';
 
 export default [
     {
@@ -99,6 +100,15 @@ export default [
         rating: 3,
         compound: 'Гриль , Персик',
         image: daimSpicedPeach,
+        ice: false,
+    },
+    {
+        id: uuidv4(),
+        title: 'Daim - BAYRAKTAR',
+        type: 'daim',
+        rating: 3,
+        compound: 'Апельсин, Банан, Ківі, Лимон, Персик',
+        image: daimBayraktar,
         ice: false,
     },
 ];
