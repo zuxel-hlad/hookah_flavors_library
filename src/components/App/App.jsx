@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Container, Alert, Snackbar } from '@mui/material';
-// import { v4 as uuidv4 } from 'uuid'
+// import { v4 as uuidv4 } from 'uuid';
 import Header from '../Header/Header';
 import FlavorsList from '../FlavorsList/FlavorsList';
 import Loader from '../Loader/Loader';
@@ -38,12 +38,12 @@ const App = () => {
     // const addNewFlavor = async () => {
     //     await addFlavor({
     //         id: uuidv4(),
-    //         title: 'Daim - BAYRAKTAR',
+    //         title: 'Daim - DEJAFLUE',
     //         type: 'daim',
     //         rating: 3,
-    //         compound: 'Апельсин, Банан, Ківі, Лимон, Персик',
+    //         compound: 'Диня, Кавун, Лід, Морозиво',
     //         image: '',
-    //         ice: false,
+    //         ice: true,
     //     });
     //     console.log('flavor was added');
     // };

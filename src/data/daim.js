@@ -10,6 +10,7 @@ import daimTusovka from '../assets/img/daim/daim_tusovka.jpg';
 import daimEgzotica from '../assets/img/daim/Tabak-Daim-Egzotica-Egzotika-50gr.jpg';
 import daimSpicedPeach from '../assets/img/daim/Tabak-Daim-Spiced-Peach-Pryanyy-Persik-50gr.webp';
 import daimBayraktar from '../assets/img/daim/Tabak-Daim-Bayraktar-Bayraktar-50gr.webp';
+import daimBayDejaflue from '../assets/img/daim/Tabak-Daim-Dejaflue-Deghaflyu-50gr.webp';
 
 export default [
     {
@@ -110,5 +111,14 @@ export default [
         compound: 'Апельсин, Банан, Ківі, Лимон, Персик',
         image: daimBayraktar,
         ice: false,
+    },
+    {
+        id: uuidv4(),
+        title: 'Daim - DEJAFLUE',
+        type: 'daim',
+        rating: 3,
+        compound: 'Диня, Кавун, Лід, Морозиво',
+        image: daimBayDejaflue,
+        ice: true,
     },
 ];
