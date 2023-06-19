@@ -38,12 +38,12 @@ const App = () => {
     // const addNewFlavor = async () => {
     //     await addFlavor({
     //         id: uuidv4(),
-    //         title: 'Daim - DEJAFLUE',
+    //         title: 'Daim - ENDLESS FLIRT',
     //         type: 'daim',
     //         rating: 3,
-    //         compound: 'Диня, Кавун, Лід, Морозиво',
+    //         compound: 'Манго, Маракуйя, Мята, Черника',
     //         image: '',
-    //         ice: true,
+    //         ice: false,
     //     });
     //     console.log('flavor was added');
     // };

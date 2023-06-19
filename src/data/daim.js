@@ -11,6 +11,8 @@ import daimEgzotica from '../assets/img/daim/Tabak-Daim-Egzotica-Egzotika-50gr.j
 import daimSpicedPeach from '../assets/img/daim/Tabak-Daim-Spiced-Peach-Pryanyy-Persik-50gr.webp';
 import daimBayraktar from '../assets/img/daim/Tabak-Daim-Bayraktar-Bayraktar-50gr.webp';
 import daimBayDejaflue from '../assets/img/daim/Tabak-Daim-Dejaflue-Deghaflyu-50gr.webp';
+import daimIceCola from '../assets/img/daim/Tabak-Daim-Ice-Cola-Led-Kola-50gr.webp';
+import daimCinderella from '../assets/img/daim/Tabak-Daim-Cinderella-Sinderella-50gr.webp';
 
 export default [
     {
@@ -120,5 +122,23 @@ export default [
         compound: 'Диня, Кавун, Лід, Морозиво',
         image: daimBayDejaflue,
         ice: true,
+    },
+    {
+        id: uuidv4(),
+        title: 'Daim - ICE COLA',
+        type: 'daim',
+        rating: 3,
+        compound: 'Кола, Лід',
+        image: daimIceCola,
+        ice: true,
+    },
+    {
+        id: uuidv4(),
+        title: 'Daim - CINDERELLA',
+        type: 'daim',
+        rating: 3,
+        compound: 'Диня, Малина, Манго, Ожина, Персик',
+        image: daimCinderella,
+        ice: false,
     },
 ];
