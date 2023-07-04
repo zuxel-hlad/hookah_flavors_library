@@ -1,23 +1,36 @@
 {
     "extends": [
+        "react-app",
         "airbnb",
+        "airbnb-typescript",
         "airbnb/hooks",
         "eslint:recommended",
         "prettier",
         "plugin:jsx-a11y/recommended"
     ],
     "parserOptions": {
-        "ecmaVersion": 12
+        "ecmaVersion": 12,
+        "project": ["./tsconfig.json"]
     },
     "env": {
         "browser": true,
         "es6": true
     },
     "plugins": ["prettier", "react", "react-hooks", "html"],
+
     "rules": {
         "camelcase": "error",
+        "arrow-body-style": ["error", "always"],
         "spaced-comment": "error",
         "no-duplicate-imports": "error",
+        "import/no-named-as-default": 0,
+        "no-param-reassign": [
+            "error",
+            {
+                "props": true,
+                "ignorePropertyModificationsFor": ["state"]
+            }
+        ],
         "import/no-extraneous-dependencies": [
             "error",
             {
@@ -45,7 +58,7 @@
         "react/jsx-filename-extension": [
             1,
             {
-                "extensions": [".js", ".jsx"]
+                "extensions": [".js", ".jsx", ".ts", ".tsx"]
             }
         ],
         "prettier/prettier": [

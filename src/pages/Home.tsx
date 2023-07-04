@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect, FC } from 'react';
 import { Container, Alert, Snackbar } from '@mui/material';
+import { useAppDispatch, useAppSelector } from '../redux/store';
 import FlavorsList from '../components/FlavorsList/FlavorsList';
 import Loader from '../components/Loader/Loader';
 import useApi from '../api/index';
@@ -8,10 +9,13 @@ import useSearch from '../hooks/search.hook';
 
 // import { v4 as uuidv4 } from 'uuid';
 
-const Home = () => {
+const Home: FC = () => {
+    const dispatch = useAppDispatch();
     const [allFlavors, setAllFlavors] = useState([]);
     const [flavorRatingLoading, setFlavorRatingLoading] = useState(false);
     const { getFlavors, loading, updateRating, error } = useApi();
+    const filter = useAppSelector(({ filter }) => filter.filter);
+    const search = useAppSelector(({ search }) => search.search);
 
     // update flavor rating
     const updateFlavorRating = async (rating, id) => {
@@ -47,13 +51,12 @@ const Home = () => {
     // reset all filters
 
     // find flavor
-    const searchedFlavors = useSearch('', allFlavors);
+    const searchedFlavors = useSearch(search, allFlavors);
     // filter flavors
-    const filteredFlavors = useFilter('all', searchedFlavors);
+    const filteredFlavors = useFilter(filter, searchedFlavors);
 
     useEffect(() => {
         getFlavors().then(data => {
-            console.log(data);
             setAllFlavors(data);
         });
         // eslint-disable-next-line react-hooks/exhaustive-deps
