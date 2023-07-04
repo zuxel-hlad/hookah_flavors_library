@@ -12,6 +12,7 @@ export default [
         compound: "Апельсин, Манго, М'ята",
         image: adalyaTazMangui,
         ice: true,
+        comments: [],
     },
     {
         id: uuidv4(),
@@ -21,6 +22,7 @@ export default [
         compound: 'Апельсин, Грейпфрут',
         image: adalyaNothLights,
         ice: false,
+        comments: [],
     },
     {
         id: uuidv4(),
@@ -30,5 +32,6 @@ export default [
         compound: 'Манго, Маракуйя, Мята, Черника',
         image: adalyaEndlessFlirt,
         ice: false,
+        comments: [],
     },
 ];

@@ -10,5 +10,6 @@ export default [
         compound: 'Вареники, Вишня',
         image: molfarPiritLine,
         ice: false,
+        comments: [],
     },
 ];

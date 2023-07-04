@@ -10,5 +10,6 @@ export default [
         compound: 'Бузина, Клюква, Красная Смородина',
         image: zodiacSourBerries,
         ice: false,
+        comments: [],
     },
 ];

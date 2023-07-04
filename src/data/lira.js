@@ -10,5 +10,6 @@ export default [
         compound: 'Апельсин, Кавун, Яблуко, Мандарин',
         image: liraSours,
         ice: false,
+        comments: [],
     },
 ];

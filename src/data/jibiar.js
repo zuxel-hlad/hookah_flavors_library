@@ -19,6 +19,7 @@ export default [
         compound: 'Ожина, Лід, Малина',
         image: jibiarFreshBerry,
         ice: true,
+        comments: [],
     },
     {
         id: uuidv4(),
@@ -28,6 +29,7 @@ export default [
         compound: 'Апельсин, Вишня, Малина, Манго, Персик, Чорниця',
         image: jibiarMasterMix,
         ice: false,
+        comments: [],
     },
     {
         id: uuidv4(),
@@ -37,6 +39,7 @@ export default [
         compound: 'Малина, Персик, Чорниця',
         image: jibiarRaspberryPeachBlueberry,
         ice: false,
+        comments: [],
     },
     {
         id: uuidv4(),
@@ -46,6 +49,7 @@ export default [
         compound: "Кавун, Ваніль, Диня, М'ята",
         image: jibiarDejavu,
         ice: true,
+        comments: [],
     },
     {
         id: uuidv4(),
@@ -55,6 +59,7 @@ export default [
         compound: 'Кавун, Манго, Маракуя, Пітайя',
         image: jibiarAmourInfini,
         ice: false,
+        comments: [],
     },
     {
         id: uuidv4(),
@@ -64,6 +69,7 @@ export default [
         compound: 'Абрикос, Лід, Чорниця',
         image: jibiarSantaBarbara,
         ice: true,
+        comments: [],
     },
     {
         id: uuidv4(),
@@ -73,6 +79,7 @@ export default [
         compound: "Зелене Яблуко, Ківі, Лайм, М'ята",
         image: jibiarGreenMix,
         ice: true,
+        comments: [],
     },
     {
         id: uuidv4(),
@@ -82,6 +89,7 @@ export default [
         compound: 'Кола, Лід',
         image: jibiarIceCola,
         ice: true,
+        comments: [],
     },
     {
         id: uuidv4(),
@@ -91,6 +99,7 @@ export default [
         compound: 'Ананас, Маракуйя, Пітая',
         image: jibiarHavana,
         ice: false,
+        comments: [],
     },
     {
         id: uuidv4(),
@@ -100,5 +109,6 @@ export default [
         compound: 'Спеції',
         image: jibiarPanRaas,
         ice: false,
+        comments: [],
     },
 ];

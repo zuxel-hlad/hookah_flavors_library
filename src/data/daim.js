@@ -23,6 +23,7 @@ export default [
         compound: 'Какао, Пиріг, Шоколад',
         image: daimBillionaire,
         ice: false,
+        comments: [],
     },
     {
         id: uuidv4(),
@@ -32,6 +33,7 @@ export default [
         compound: "Лайм, Маракуя, М'ята, Слива",
         image: daimOzzyFozzy,
         ice: true,
+        comments: [],
     },
     {
         id: uuidv4(),
@@ -41,6 +43,7 @@ export default [
         compound: "Лід, М'ята",
         image: daimAbsoluteZero,
         ice: true,
+        comments: [],
     },
     {
         id: uuidv4(),
@@ -50,6 +53,7 @@ export default [
         compound: "Диня, Маракуя, М'ята, Роза",
         image: daimLove69,
         ice: true,
+        comments: [],
     },
     {
         id: uuidv4(),
@@ -59,6 +63,7 @@ export default [
         compound: 'Кавун, Ожина, Лід, Малина, Чорниця',
         image: daimIceWaterMelonBerry,
         ice: true,
+        comments: [],
     },
     {
         id: uuidv4(),
@@ -68,6 +73,7 @@ export default [
         compound: "Диня, Ожина, Полуниця, Малина, Манго, М'ята",
         image: daimLadyKiller,
         ice: true,
+        comments: [],
     },
     {
         id: uuidv4(),
@@ -77,6 +83,7 @@ export default [
         compound: 'Ананас, Банан, Манго, Маракуя, Папая, Персик, Пітайя',
         image: daimAmericanQueen,
         ice: false,
+        comments: [],
     },
     {
         id: uuidv4(),
@@ -86,6 +93,7 @@ export default [
         compound: 'Фруктовий мікс',
         image: daimTusovka,
         ice: false,
+        comments: [],
     },
     {
         id: uuidv4(),
@@ -95,6 +103,7 @@ export default [
         compound: 'Мультіфрукт',
         image: daimEgzotica,
         ice: false,
+        comments: [],
     },
     {
         id: uuidv4(),
@@ -104,6 +113,7 @@ export default [
         compound: 'Гриль , Персик',
         image: daimSpicedPeach,
         ice: false,
+        comments: [],
     },
     {
         id: uuidv4(),
@@ -113,6 +123,7 @@ export default [
         compound: 'Апельсин, Банан, Ківі, Лимон, Персик',
         image: daimBayraktar,
         ice: false,
+        comments: [],
     },
     {
         id: uuidv4(),
@@ -122,6 +133,7 @@ export default [
         compound: 'Диня, Кавун, Лід, Морозиво',
         image: daimBayDejaflue,
         ice: true,
+        comments: [],
     },
     {
         id: uuidv4(),
@@ -131,6 +143,7 @@ export default [
         compound: 'Кола, Лід',
         image: daimIceCola,
         ice: true,
+        comments: [],
     },
     {
         id: uuidv4(),
@@ -140,5 +153,6 @@ export default [
         compound: 'Диня, Малина, Манго, Ожина, Персик',
         image: daimCinderella,
         ice: false,
+        comments: [],
     },
 ];

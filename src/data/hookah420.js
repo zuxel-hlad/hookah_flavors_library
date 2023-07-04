@@ -11,6 +11,7 @@ export default [
         compound: 'Суниця',
         image: zeljanika,
         ice: false,
+        comments: [],
     },
     {
         id: uuidv4(),
@@ -20,5 +21,6 @@ export default [
         compound: 'Ананас, Коктейль',
         image: lightLine,
         ice: false,
+        comments: [],
     },
 ];
