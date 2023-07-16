@@ -1,6 +1,7 @@
 export interface IFlavorsState {
     flavors: IFlavor[];
-    loadingStatus: 'idle' | 'error' | 'loading';
+    flavorsLoadingStatus: 'idle' | 'error' | 'loading';
+    flavorRatingLoadingStatus: 'idle' | 'error' | 'loading';
 }
 
 export interface IFlavor {
@@ -11,4 +12,13 @@ export interface IFlavor {
     rating: number;
     title: string;
     type: string;
+}
+
+export interface IUpdateRatingOptions {
+    id: string;
+    rating: number;
+}
+
+export interface IAddNewFlavor {
+    name: string
 }

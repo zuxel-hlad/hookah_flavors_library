@@ -1,22 +1,21 @@
+import { createBrowserRouter } from 'react-router-dom';
 import Home from '../pages/Home';
 import NotFound from '../pages/404';
 import Details from '../pages/Details';
-import { IRoute } from './router.types';
-const router: IRoute[] = [
+
+const router = createBrowserRouter([
     {
         path: '/',
-        element: Home,
+        element: <Home />,
     },
-
     {
         path: '/details',
-        element: Details,
+        element: <Details />,
     },
-
     {
         path: '*',
-        element: NotFound,
+        element: <NotFound />,
     },
-];
+]);
 
 export default router;
