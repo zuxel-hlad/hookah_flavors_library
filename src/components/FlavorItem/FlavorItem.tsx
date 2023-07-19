@@ -1,3 +1,5 @@
+import { FC } from 'react';
+import { IFlavorItemProps } from './flavorItem.types';
 import {
     Grid,
     Card,
@@ -11,7 +13,11 @@ import LazyImage from '../LazyImage/LazyImage';
 import defaultFlavor from '../../assets/img/default_flavor.png';
 import styles from './FlavorItem.module.scss';
 
-const FlavorItem = ({ flavor, tabIndex, updateFlavorRating }) => {
+const FlavorItem: FC<IFlavorItemProps> = ({
+    flavor,
+    tabIndex,
+    updateFlavorRating,
+}) => {
     const { title, rating, compound, image, id } = flavor;
 
     return (

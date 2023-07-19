@@ -12,7 +12,6 @@ export const getFlavors = createAsyncThunk(
     async () => {
         const { request } = useHttp();
         const flavors = await request<IFlavor[]>(`${BASE_URL}/flavors.json`);
-
         return Object.keys(flavors).map(flavor => ({
             ...flavors[flavor],
             id: flavor,
@@ -24,7 +23,7 @@ export const addFlavor = createAsyncThunk(
     'flavors/addFlavor',
     async (flavor: IFlavor) => {
         const { request } = useHttp();
-        const result = await request<IAddNewFlavor>(
+        const { name } = await request<IAddNewFlavor>(
             `${BASE_URL}/flavors.json`,
             'POST',
             JSON.stringify(flavor)
@@ -32,7 +31,7 @@ export const addFlavor = createAsyncThunk(
 
         return {
             ...flavor,
-            id: result.name,
+            id: name,
         };
     }
 );

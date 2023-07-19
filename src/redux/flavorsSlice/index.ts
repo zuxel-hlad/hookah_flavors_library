@@ -54,12 +54,15 @@ const flavorsSlice = createSlice({
         });
         addCase(
             updateRating.fulfilled,
-            (state, { payload }: PayloadAction<IUpdateRatingOptions>) => {
+            (
+                state,
+                { payload: { rating, id } }: PayloadAction<IUpdateRatingOptions>
+            ) => {
                 state.flavors = state.flavors.map(flavor => {
-                    if (flavor.id === payload.id) {
+                    if (flavor.id === id) {
                         return {
                             ...flavor,
-                            rating: payload.rating,
+                            rating,
                         };
                     } else {
                         return flavor;
