@@ -14,6 +14,15 @@ import daimBayraktar from '../assets/img/daim/Tabak-Daim-Bayraktar-Bayraktar-50g
 import daimBayDejaflue from '../assets/img/daim/Tabak-Daim-Dejaflue-Deghaflyu-50gr.webp';
 import daimIceCola from '../assets/img/daim/Tabak-Daim-Ice-Cola-Led-Kola-50gr.webp';
 import daimCinderella from '../assets/img/daim/Tabak-Daim-Cinderella-Sinderella-50gr.webp';
+import daimHawaii from '../assets/img/daim/Tabak-Daim-Hawaii-Gavayi-50gr.webp';
+import daimHeisenberg from '../assets/img/daim/Tabak-Daim-Heisenberg-Hayzenberg-50gr.webp';
+import daimZeus from '../assets/img/daim/Tabak-Daim-Zeus-Zevs-50gr.webp';
+import daimHaram from '../assets/img/daim/daim_haram.png';
+import daimRedDream from '../assets/img/daim/Tabak-Daim-Red-Dream-Red-Drim-50gr.webp';
+import daimBajaBlue from '../assets/img/daim/Tabak-Daim-Baja-Blue-Badgha-Blu-50gr.webp';
+import daimIceOrangePomegranate from '../assets/img/daim/Tabak-Daim-Baja-Blue-Badgha-Blu-50gr.webp';
+import daimChillOut from '../assets/img/daim/Tabak-Daim-Chill-Out-Chill-Aut-50gr.webp';
+import daimTwoApples from '../assets/img/daim/Tabak-Daim-Two-Apples-Dvoynoe-Yabloko-50gr.webp';
 
 export default [
     {
@@ -153,6 +162,96 @@ export default [
         rating: 3,
         compound: 'Диня, Малина, Манго, Ожина, Персик',
         image: daimCinderella,
+        ice: false,
+        comments: [],
+    },
+    {
+        id: uuidv4(),
+        title: 'Daim - HAWAII',
+        type: 'daim',
+        rating: 3,
+        compound: 'Ананас, Лід, Маракуйя',
+        image: daimHawaii,
+        ice: true,
+        comments: [],
+    },
+    {
+        id: uuidv4(),
+        title: 'Daim - HEISENBERG',
+        type: 'daim',
+        rating: 3,
+        compound: 'Ананас, Банан, Ківі, Лід, Манго',
+        image: daimHeisenberg,
+        ice: true,
+        comments: [],
+    },
+    {
+        id: uuidv4(),
+        title: 'Daim - ZEUS',
+        type: 'daim',
+        rating: 3,
+        compound: 'Диня, Лід, Персик',
+        image: daimZeus,
+        ice: true,
+        comments: [],
+    },
+    {
+        id: uuidv4(),
+        title: 'Daim - ZEUS',
+        type: 'daim',
+        rating: 3,
+        compound: 'Ментол, Банан, Лісові Ягоди',
+        image: daimHaram,
+        ice: true,
+        comments: [],
+    },
+    {
+        id: uuidv4(),
+        title: 'Daim - RED DREAM',
+        type: 'daim',
+        rating: 3,
+        compound: 'Журавлина, Малина, Суниця, Червона смородина',
+        image: daimRedDream,
+        ice: false,
+        comments: [],
+    },
+    {
+        id: uuidv4(),
+        title: 'Daim - BAJA BLUE',
+        type: 'daim',
+        rating: 3,
+        compound: 'Лимон, Лохина, Чорниця',
+        image: daimBajaBlue,
+        ice: false,
+        comments: [],
+    },
+    {
+        id: uuidv4(),
+        title: 'Daim - ICE ORANGE POMEGRANATE',
+        type: 'daim',
+        rating: 3,
+        compound: 'Апельсин, Гранат, Лід',
+        image: daimIceOrangePomegranate,
+        ice: true,
+        comments: [],
+    },
+    {
+        id: uuidv4(),
+        title: 'Daim - CHILL OUT',
+        type: 'daim',
+        rating: 3,
+        compound: 'Вишня, Грейпфрут, Диня, Лід, Маракуйя, Ожина',
+        image: daimChillOut,
+        ice: true,
+        comments: [],
+    },
+    {
+        id: uuidv4(),
+        title: 'Daim - TWO APPLES',
+        type: 'daim',
+        rating: 3,
+        compound: 'Аніс, Зелене яблуко, Яблуко',
+        image: daimTwoApples,
         ice: false,
         comments: [],
     },

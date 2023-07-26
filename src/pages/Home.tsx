@@ -34,10 +34,10 @@ const Home: FC = () => {
         dispatch(
             addFlavor({
                 id: uuidv4(),
-                title: 'Daim - TEST FLAVOR',
+                title: 'Daim - TWO APPLES',
                 type: 'daim',
                 rating: 3,
-                compound: 'test, test, test, test',
+                compound: 'Аніс, Зелене яблуко, Яблуко',
                 image: '',
                 ice: false,
             })
@@ -52,6 +52,7 @@ const Home: FC = () => {
     const filteredFlavors = useFilter(filter, searchedFlavors);
 
     useEffect(() => {
+        console.log('render');
         dispatch(getFlavors());
     }, []);
 
@@ -61,12 +62,13 @@ const Home: FC = () => {
                 component="main"
                 maxWidth="xl"
             >
-                <button
+                {/* <button
+                    style={{ padding: '15px', cursor: 'pointer' }}
                     type="button"
                     onClick={addNewFlavor}
                 >
                     ADD FLAVOR
-                </button>
+                </button> */}
                 {flavorsLoadingStatus !== 'error' && (
                     <FlavorsList
                         flavors={filteredFlavors}

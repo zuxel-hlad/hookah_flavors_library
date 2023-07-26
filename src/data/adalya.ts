@@ -3,6 +3,7 @@ import { IFMockFlavor } from './data.types';
 import adalyaTazMangui from '../assets/img/adalya/Tabak-Adalya-Taz-Mangui-Taz-Mengi-50gr.webp';
 import adalyaNothLights from '../assets/img/adalya/Tabak-Adalya-North-Lights-Nors-Layts-50gr.webp';
 import adalyaEndlessFlirt from '../assets/img/daim/Tabak-Adalya-Endless-Flirt-Endless-Flirt-50gr.webp';
+import adalyaLove66 from '../assets/img/daim/Tabak-Adalya-Endless-Flirt-Endless-Flirt-50gr.webp';
 
 const f: IFMockFlavor = {
     id: uuidv4(),
@@ -38,11 +39,21 @@ export default [
     },
     {
         id: uuidv4(),
-        title: 'Daim - ENDLESS FLIRT',
-        type: 'daim',
+        title: 'Adalya - ENDLESS FLIRT',
+        type: 'adalya',
         rating: 3,
         compound: 'Манго, Маракуйя, Мята, Черника',
         image: adalyaEndlessFlirt,
+        ice: false,
+        comments: [],
+    },
+    {
+        id: uuidv4(),
+        title: 'Adalya - Love 66',
+        type: 'adalya',
+        rating: 3,
+        compound: "Диня, М'ята, Маракуйя, Роза",
+        image: adalyaLove66,
         ice: false,
         comments: [],
     },
