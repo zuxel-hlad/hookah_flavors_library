@@ -26,11 +26,11 @@ const Home: FC = () => {
     );
 
     // update flavor rating
-    const updateFlavorRating = async (rating: number, id: string) => {
+    const updateFlavorRating = (rating: number, id: string): void => {
         dispatch(updateRating({ rating, id }));
     };
 
-    const addNewFlavor = async () => {
+    const addNewFlavor = (): void => {
         dispatch(
             addFlavor({
                 id: uuidv4(),
@@ -52,7 +52,6 @@ const Home: FC = () => {
     const filteredFlavors = useFilter(filter, searchedFlavors);
 
     useEffect(() => {
-        console.log('render');
         dispatch(getFlavors());
     }, []);
 

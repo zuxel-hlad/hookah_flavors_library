@@ -1,5 +1,5 @@
 export interface ILazyImageProps {
-    src: string;
+    src: string | object;
     alt: string;
     objectFit?: 'contain' | 'fill' | 'cover' | 'none' | 'scale-down';
     effect?: 'blur' | 'black-and-white';

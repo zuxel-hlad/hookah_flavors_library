@@ -10,7 +10,7 @@ export interface IFMockFlavor {
     type: string;
     rating: number;
     compound: string;
-    image: string | any;
+    image: string | object;
     ice: boolean;
     comments: string[];
 }
