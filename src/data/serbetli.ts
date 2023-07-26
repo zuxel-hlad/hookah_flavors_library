@@ -1,4 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
+import { IFMockFlavor } from './data.types';
 import serbetliRaspberryPeachBlueberry from '../assets/img/serbetli/Tabak-Serbetli-Raspberry-Peach-Blueberry-Malina-Persik-Chernika-50gr.webp';
 import serbetliDoubleEffect from '../assets/img/serbetli/Tabak-Serbetli-Double-Effect-Dvoynoy-Effekt-50gr.webp';
 
@@ -23,4 +24,4 @@ export default [
         ice: false,
         comments: [],
     },
-];
+] as IFMockFlavor[];

@@ -1,7 +1,19 @@
 import { v4 as uuidv4 } from 'uuid';
+import { IFMockFlavor } from './data.types';
 import adalyaTazMangui from '../assets/img/adalya/Tabak-Adalya-Taz-Mangui-Taz-Mengi-50gr.webp';
 import adalyaNothLights from '../assets/img/adalya/Tabak-Adalya-North-Lights-Nors-Layts-50gr.webp';
 import adalyaEndlessFlirt from '../assets/img/daim/Tabak-Adalya-Endless-Flirt-Endless-Flirt-50gr.webp';
+
+const f: IFMockFlavor = {
+    id: uuidv4(),
+    title: 'Adalya TAZ MANGUI',
+    type: 'adalya',
+    rating: 3,
+    compound: "Апельсин, Манго, М'ята",
+    image: adalyaTazMangui,
+    ice: true,
+    comments: [],
+};
 
 export default [
     {

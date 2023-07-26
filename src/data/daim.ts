@@ -1,4 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
+import { IFMockFlavor } from './data.types';
 import daimBillionaire from '../assets/img/daim/Tabak-Daim-Billionaire-Baylone-50gr.webp';
 import daimOzzyFozzy from '../assets/img/daim/Tabak-Daim-Ozzy-Fozzy-Ozzi-Fozzi-50gr.webp';
 import daimAbsoluteZero from '../assets/img/daim/Tabak-Daim-Absolute-Zero-Absolyut-Zero-50gr.webp';
@@ -155,4 +156,4 @@ export default [
         ice: false,
         comments: [],
     },
-];
+] as IFMockFlavor[];

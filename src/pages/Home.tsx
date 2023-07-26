@@ -8,8 +8,8 @@ import {
 } from '../redux/flavorsSlice/flavorsSlice.async.actions';
 import FlavorsList from '../components/FlavorsList/FlavorsList';
 import Loader from '../components/Loader/Loader';
-import useFilter from '../hooks/filter.hook';
-import useSearch from '../hooks/search.hook';
+import useFilter from '../hooks/filter.hook/filter.hook';
+import useSearch from '../hooks/search.hook/search.hook';
 
 import { v4 as uuidv4 } from 'uuid';
 
@@ -26,7 +26,7 @@ const Home: FC = () => {
     );
 
     // update flavor rating
-    const updateFlavorRating = async (rating, id) => {
+    const updateFlavorRating = async (rating: number, id: string) => {
         dispatch(updateRating({ rating, id }));
     };
 

@@ -1,4 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
+import { IFMockFlavor } from './data.types';
 import molfarPiritLine from '../assets/img/molfar/Tabak-Molfar-Tobacco-Spirit-Line-Varenik-s-Vishnyami-100-gr.webp';
 
 export default [
@@ -12,4 +13,4 @@ export default [
         ice: false,
         comments: [],
     },
-];
+] as IFMockFlavor[];

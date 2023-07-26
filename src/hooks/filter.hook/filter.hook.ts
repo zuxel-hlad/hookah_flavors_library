@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
+import { IFlavor } from '../../redux/flavorsSlice/flavorsSlice.types';
 
-const useFilter = (filter, filterArray) =>
+const useFilter = (filter: string, filterArray: IFlavor[]) =>
     useMemo(() => {
         switch (filter) {
             case 'ice':

@@ -1,4 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
+import { IFMockFlavor } from './data.types';
 import zodiacSourBerries from '../assets/img/zodiac/Tabak-Zodiac-Light-Line-Sour-Berries-Sauer-Yagody-200-gr.webp';
 
 export default [
@@ -12,4 +13,4 @@ export default [
         ice: false,
         comments: [],
     },
-];
+] as IFMockFlavor[];

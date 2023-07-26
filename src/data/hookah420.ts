@@ -1,4 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
+import { IFMockFlavor } from './data.types';
 import zeljanika from '../assets/img/hookah420/vajld-rr-squirt-420.jpg';
 import lightLine from '../assets/img/hookah420/Tabak-420-Light-Line-Ananasovyy-Smuzi-25-gr.webp';
 
@@ -23,4 +24,4 @@ export default [
         ice: false,
         comments: [],
     },
-];
+] as IFMockFlavor[];

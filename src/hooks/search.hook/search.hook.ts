@@ -1,7 +1,8 @@
 import { useMemo } from 'react';
+import { IFlavor } from '../../redux/flavorsSlice/flavorsSlice.types';
 
-const useSearch = (search, searchArray) =>
-    useMemo(() => {
+const useSearch = (search: string, searchArray: IFlavor[]) => {
+    return useMemo(() => {
         if (search.length) {
             return [...searchArray].filter(item =>
                 item.title.toLowerCase().includes(search.toLowerCase())
@@ -9,5 +10,6 @@ const useSearch = (search, searchArray) =>
         }
         return searchArray;
     }, [search, searchArray]);
+};
 
 export default useSearch;

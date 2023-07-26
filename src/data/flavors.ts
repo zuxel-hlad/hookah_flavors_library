@@ -1,3 +1,4 @@
+import { IFMockFlavor } from './data.types';
 import daim from './daim';
 import jibiar from './jibiar';
 import lira from './lira';
@@ -18,4 +19,4 @@ export default [
     ...molfar,
     ...zodiac,
     ...diamond,
-];
+] as IFMockFlavor[];

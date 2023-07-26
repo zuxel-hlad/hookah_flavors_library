@@ -1,3 +1,4 @@
+import { ChangeEvent } from 'react';
 import {
     AppBar,
     Toolbar,
@@ -7,6 +8,7 @@ import {
     MenuItem,
     Divider,
     Button,
+    SelectChangeEvent,
 } from '@mui/material';
 import { Search as SearchIcon } from '@mui/icons-material';
 import { useAppSelector, useAppDispatch } from '../../redux/store';
@@ -40,7 +42,9 @@ const Header = () => {
                     <Select
                         className={styles.headerSelect}
                         value={filter}
-                        onChange={e => dispatch(setFilter(e.target.value))}
+                        onChange={(e: SelectChangeEvent) =>
+                            dispatch(setFilter(e.target.value))
+                        }
                     >
                         {filterOptions &&
                             filterOptions.map(({ id, label, value }) => (
@@ -60,7 +64,9 @@ const Header = () => {
                     <InputBase
                         sx={{ width: '100%' }}
                         value={search}
-                        onChange={e => dispatch(setSearch(e.target.value))}
+                        onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                            dispatch(setSearch(e.target.value))
+                        }
                         placeholder="Знайти смак"
                         inputProps={{ 'aria-label': 'Search flavor' }}
                     />

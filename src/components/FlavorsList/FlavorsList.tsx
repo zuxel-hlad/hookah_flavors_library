@@ -1,8 +1,13 @@
+import { FC } from 'react';
 import { Grid, Typography } from '@mui/material';
+import { IFlavorListProps } from './flavorList.types';
 import FlavorItem from '../FlavorItem/FlavorItem';
 import styles from './FlavorsList.module.scss';
 
-const FlavorsList = ({ flavors = [], updateFlavorRating }) => (
+const FlavorsList: FC<IFlavorListProps> = ({
+    flavors = [],
+    updateFlavorRating,
+}) => (
     <Grid
         component="section"
         container

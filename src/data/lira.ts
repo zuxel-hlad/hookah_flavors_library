@@ -1,4 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
+import { IFMockFlavor } from './data.types';
 import liraSours from '../assets/img/lira/lirra_50_gr_sours-800x534.jpg';
 
 export default [
@@ -12,4 +13,4 @@ export default [
         ice: false,
         comments: [],
     },
-];
+] as IFMockFlavor[];

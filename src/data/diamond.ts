@@ -1,4 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
+import { IFMockFlavor } from './data.types';
 import diamondCitrusMix from '../assets/img/diamond/diamond_citrus_mix.png';
 
 export default [
@@ -12,4 +13,4 @@ export default [
         ice: false,
         comments: [],
     },
-];
+] as IFMockFlavor[];

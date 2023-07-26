@@ -1,4 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
+import { IFMockFlavor } from './data.types';
 import jibiarFreshBerry from '../assets/img/jibiar/tabak-jibiar-fresh-berry-yagody-led-50-gr.jpg';
 import jibiarMasterMix from '../assets/img/jibiar/Tabak-JIBIAR-Master-Mix-Master-Miks-50-gr.webp';
 import jibiarRaspberryPeachBlueberry from '../assets/img/jibiar/Tabak-JIBIAR-Raspberry-Peach-Blueberry-Malina-Persik-Chernika-50-gr.webp';
@@ -111,4 +112,4 @@ export default [
         ice: false,
         comments: [],
     },
-];
+] as IFMockFlavor[];

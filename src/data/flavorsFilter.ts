@@ -1,3 +1,5 @@
+import { IFlavorsFilter } from './data.types';
+
 export default [
     {
         label: 'Усі',
@@ -59,4 +61,4 @@ export default [
         value: 'ice',
         id: 12,
     },
-];
+] as IFlavorsFilter[];
