@@ -1,9 +1,3 @@
-export interface IFlavorsFilter {
-    label: string;
-    value: string;
-    id: number;
-}
-
 export interface IFMockFlavor {
     id: string;
     title: string;

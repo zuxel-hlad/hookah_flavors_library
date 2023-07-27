@@ -1,6 +1,6 @@
 {
     "extends": [
-        "react-app",
+        // "react-app",
         "airbnb",
         "airbnb-typescript",
         "airbnb/hooks",
@@ -9,7 +9,7 @@
         "plugin:jsx-a11y/recommended"
     ],
     "parserOptions": {
-        "ecmaVersion": 12,
+        "ecmaVersion": "latest",
         "project": ["./tsconfig.json"]
     },
     "env": {
@@ -19,8 +19,11 @@
     "plugins": ["prettier", "react", "react-hooks", "html"],
 
     "rules": {
+        "no-useless-catch": "off",
+        "no-shadow": "off",
+        "@typescript-eslint/no-shadow": "off",
         "camelcase": "error",
-        "arrow-body-style": ["error", "always"],
+        "arrow-body-style": ["error", "as-needed"],
         "spaced-comment": "error",
         "no-duplicate-imports": "error",
         "import/no-named-as-default": 0,

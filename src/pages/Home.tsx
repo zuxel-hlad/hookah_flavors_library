@@ -1,17 +1,16 @@
 import { useEffect, FC } from 'react';
 import { Container, Alert, Snackbar } from '@mui/material';
+// import { v4 as uuidv4 } from 'uuid';
 import { useAppDispatch, useAppSelector } from '../redux/store';
 import {
     getFlavors,
     updateRating,
-    addFlavor,
+    // addFlavor,
 } from '../redux/flavorsSlice/flavorsSlice.async.actions';
 import FlavorsList from '../components/FlavorsList/FlavorsList';
 import Loader from '../components/Loader/Loader';
 import useFilter from '../hooks/filter.hook/filter.hook';
 import useSearch from '../hooks/search.hook/search.hook';
-
-import { v4 as uuidv4 } from 'uuid';
 
 const Home: FC = () => {
     const dispatch = useAppDispatch();
@@ -30,21 +29,21 @@ const Home: FC = () => {
         dispatch(updateRating({ rating, id }));
     };
 
-    const addNewFlavor = (): void => {
-        dispatch(
-            addFlavor({
-                id: uuidv4(),
-                title: 'Daim - TWO APPLES',
-                type: 'daim',
-                rating: 3,
-                compound: 'Аніс, Зелене яблуко, Яблуко',
-                image: '',
-                ice: false,
-            })
-        );
+    // const addNewFlavor = (): void => {
+    //     dispatch(
+    //         addFlavor({
+    //             id: uuidv4(),
+    //             title: 'Daim - TWO APPLES',
+    //             type: 'daim',
+    //             rating: 3,
+    //             compound: 'Аніс, Зелене яблуко, Яблуко',
+    //             image: '',
+    //             ice: false,
+    //         })
+    //     );
 
-        console.log('flavor was added');
-    };
+    //     console.log('flavor was added');
+    // };
 
     // find flavor
     const searchedFlavors = useSearch(search, flavors);
@@ -53,7 +52,7 @@ const Home: FC = () => {
 
     useEffect(() => {
         dispatch(getFlavors());
-    }, []);
+    }, [dispatch]);
 
     return (
         <section>

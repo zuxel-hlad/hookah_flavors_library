@@ -11,23 +11,24 @@ import {
     SelectChangeEvent,
 } from '@mui/material';
 import { Search as SearchIcon } from '@mui/icons-material';
+import useCreateFilterOptions from '../../hooks/createFilterOptions.hook';
 import { useAppSelector, useAppDispatch } from '../../redux/store';
 import { setFilter } from '../../redux/filterSlice';
 import { setSearch } from '../../redux/searchSlice';
-import filterOptions from '../../data/flavorsFilter';
 import styles from './Header.module.scss';
 
 const Header = () => {
     const dispatch = useAppDispatch();
     const filter = useAppSelector(({ filter }) => filter.filter);
     const search = useAppSelector(({ search }) => search.search);
+    const flavors = useAppSelector(({ flavors }) => flavors.flavors);
+    const filterOptions = useCreateFilterOptions(flavors);
 
     const resetFilters = () => {
         if (filter !== 'all' || search.length > 0) {
             dispatch(setFilter('all'));
             dispatch(setSearch(''));
         }
-        return undefined;
     };
     return (
         <AppBar
@@ -47,10 +48,10 @@ const Header = () => {
                         }
                     >
                         {filterOptions &&
-                            filterOptions.map(({ id, label, value }) => (
+                            filterOptions.map(({ label, value }) => (
                                 <MenuItem
                                     value={value}
-                                    key={id}
+                                    key={value}
                                 >
                                     {label}
                                 </MenuItem>

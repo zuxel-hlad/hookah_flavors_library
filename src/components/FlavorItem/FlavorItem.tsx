@@ -13,7 +13,6 @@ import LazyImage from '../LazyImage/LazyImage';
 import defaultFlavor from '../../assets/img/default_flavor.png';
 import styles from './FlavorItem.module.scss';
 
-console.log(typeof defaultFlavor);
 const FlavorItem: FC<IFlavorItemProps> = ({
     flavor,
     tabIndex,
