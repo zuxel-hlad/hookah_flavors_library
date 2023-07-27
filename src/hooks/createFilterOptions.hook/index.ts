@@ -3,8 +3,17 @@ import { IFilterOptions } from './createFilterOptionsTypes';
 import { IFlavor } from '../../redux/flavorsSlice/flavorsSlice.types';
 
 const useCreateFilterOptions = (flavors: IFlavor[]): IFilterOptions[] =>
-    useMemo(
-        () => [
+    useMemo(() => {
+        console.log('call');
+        if (!flavors.length) {
+            return [
+                {
+                    label: 'Усі',
+                    value: 'all',
+                },
+            ];
+        }
+        return [
             {
                 label: 'Усі',
                 value: 'all',
@@ -28,7 +37,6 @@ const useCreateFilterOptions = (flavors: IFlavor[]): IFilterOptions[] =>
                     }
                     return o;
                 }, []),
-        ],
-        [flavors]
-    );
+        ];
+    }, [flavors]);
 export default useCreateFilterOptions;
