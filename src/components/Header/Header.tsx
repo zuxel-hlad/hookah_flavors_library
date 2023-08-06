@@ -15,13 +15,16 @@ import useCreateFilterOptions from '../../hooks/createFilterOptions.hook';
 import { useAppSelector, useAppDispatch } from '../../redux/store';
 import { setFilter } from '../../redux/filterSlice';
 import { setSearch } from '../../redux/searchSlice';
+import { flavorsSelector } from '../../redux/flavorsSlice/selectors';
+import filterSelector from '../../redux/filterSlice/selectors';
+import searchSelector from '../../redux/searchSlice/selectors';
 import styles from './Header.module.scss';
 
 const Header = () => {
     const dispatch = useAppDispatch();
-    const filter = useAppSelector(({ filter }) => filter.filter);
-    const search = useAppSelector(({ search }) => search.search);
-    const flavors = useAppSelector(({ flavors }) => flavors.flavors);
+    const filter = useAppSelector(filterSelector);
+    const search = useAppSelector(searchSelector);
+    const flavors = useAppSelector(flavorsSelector);
     const filterOptions = useCreateFilterOptions(flavors);
 
     const resetFilters = () => {
