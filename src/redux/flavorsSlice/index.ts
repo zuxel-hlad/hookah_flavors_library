@@ -1,25 +1,36 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { IFlavorsState } from './flavorsSlice.types';
+import {
+    IFlavorsState,
+    IFlavor,
+    IUpdateRatingOptions,
+} from './flavorsSlice.types';
 import {
     getFlavors,
     addFlavor,
     updateRating,
 } from './flavorsSlice.async.actions';
-import { IFlavor, IUpdateRatingOptions } from './flavorsSlice.types';
 
 const initialState: IFlavorsState = {
     flavors: [],
     flavorsLoadingStatus: 'idle',
-    flavorRatingLoadingStatus: 'idle',
+    flavorsLoadingErrorMessage: '',
+    updateRatingStatus: 'success',
+    ratingStatusSnackVisibility: false,
+    updateRatingMessage: '',
 };
 
 const flavorsSlice = createSlice({
     name: 'flavors',
     initialState,
-    reducers: {},
+    reducers: {
+        handleCloseRatingSnack: state => {
+            state.ratingStatusSnackVisibility = false;
+        },
+    },
     extraReducers: ({ addCase, addDefaultCase }) => {
-        //getFlavors
+        // getFlavors
         addCase(getFlavors.pending, state => {
+            state.flavorsLoadingErrorMessage = '';
             state.flavorsLoadingStatus = 'loading';
         });
         addCase(
@@ -31,9 +42,11 @@ const flavorsSlice = createSlice({
         );
         addCase(getFlavors.rejected, state => {
             state.flavorsLoadingStatus = 'error';
+            state.flavorsLoadingErrorMessage =
+                'Сталася помилка. Будь ласка оновіть сторінку.';
         });
 
-        //addFlavor
+        // addFlavor
         addCase(addFlavor.pending, state => {
             state.flavorsLoadingStatus = 'loading';
         });
@@ -48,10 +61,7 @@ const flavorsSlice = createSlice({
             state.flavorsLoadingStatus = 'error';
         });
 
-        //updateFlavorRating
-        addCase(updateRating.pending, state => {
-            state.flavorRatingLoadingStatus = 'loading';
-        });
+        // updateFlavorRating
         addCase(
             updateRating.fulfilled,
             (
@@ -64,19 +74,24 @@ const flavorsSlice = createSlice({
                             ...flavor,
                             rating,
                         };
-                    } else {
-                        return flavor;
                     }
+                    return flavor;
                 });
-                state.flavorRatingLoadingStatus = 'idle';
+                state.updateRatingStatus = 'success';
+                state.updateRatingMessage = `Рейтинг успішно змінено на ${rating}`;
+                state.ratingStatusSnackVisibility = true;
             }
         );
         addCase(updateRating.rejected, state => {
-            state.flavorRatingLoadingStatus = 'error';
+            state.updateRatingStatus = 'error';
+            state.updateRatingMessage =
+                'Сталася помилка. Оновіть сторінку і спробуйте ще.';
+            state.ratingStatusSnackVisibility = true;
         });
         addDefaultCase(() => {});
     },
 });
 
-const { reducer } = flavorsSlice;
+const { reducer, actions } = flavorsSlice;
+export const { handleCloseRatingSnack } = actions;
 export default reducer;

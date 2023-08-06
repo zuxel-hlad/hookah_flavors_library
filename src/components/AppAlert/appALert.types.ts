@@ -1,5 +1,8 @@
+import { SyntheticEvent } from 'react';
+
 export interface IAppAlertProps {
     message: string;
-    status: 'error' | 'info' | 'success' | 'warning';
+    severity: 'error' | 'info' | 'success' | 'warning';
     sx?: any;
+    onClose?: (event: SyntheticEvent) => void;
 }

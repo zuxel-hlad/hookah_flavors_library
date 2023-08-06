@@ -1,4 +1,3 @@
-const BASE_URL = 'https://shop-app-6c9a6-default-rtdb.firebaseio.com';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import {
     IFlavor,
@@ -6,6 +5,8 @@ import {
     IAddNewFlavor,
 } from './flavorsSlice.types';
 import useHttp from '../../hooks/http.hook';
+
+const BASE_URL = 'https://shop-app-6c9a6-default-rtdb.firebaseio.com';
 
 export const getFlavors = createAsyncThunk(
     'flavors/fetchAllFlavors',

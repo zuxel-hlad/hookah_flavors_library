@@ -2,9 +2,10 @@ import { FC } from 'react';
 import { Alert } from '@mui/material';
 import { IAppAlertProps } from './appALert.types';
 
-const AppALert: FC<IAppAlertProps> = ({ message, status, sx }) => (
+const AppALert: FC<IAppAlertProps> = ({ message, severity, sx, onClose }) => (
     <Alert
-        severity={status}
+        onClose={onClose}
+        severity={severity}
         sx={sx}
     >
         {message}

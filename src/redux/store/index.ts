@@ -6,9 +6,7 @@ import flavors from '../flavorsSlice';
 
 const store = configureStore({
     reducer: { search, filter, flavors },
-    middleware: getDefaultMiddleware => {
-        return getDefaultMiddleware();
-    },
+    middleware: getDefaultMiddleware => getDefaultMiddleware(),
     devTools: process.env.NODE_ENV !== 'production',
 });
 export default store;

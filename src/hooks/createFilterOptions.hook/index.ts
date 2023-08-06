@@ -4,8 +4,7 @@ import { IFlavor } from '../../redux/flavorsSlice/flavorsSlice.types';
 
 const useCreateFilterOptions = (flavors: IFlavor[]): IFilterOptions[] =>
     useMemo(() => {
-        console.log('call');
-        if (!flavors.length) {
+        if (flavors.length === 0) {
             return [
                 {
                     label: 'Усі',

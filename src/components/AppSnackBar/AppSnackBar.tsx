@@ -1,27 +1,27 @@
-import { FC, PropsWithChildren, useState, useEffect } from 'react';
+import { FC, PropsWithChildren } from 'react';
 import { Snackbar } from '@mui/material';
+import { ISnackProps } from './appSnack.types';
 
-const AppSnackBar: FC<PropsWithChildren<{ open: boolean }>> = ({
+const AppSnackBar: FC<PropsWithChildren<ISnackProps>> = ({
     children,
     open,
-}) => {
-    const [openBar, setIsOpenBar] = useState<boolean>(false);
-
-    const timerId = 0;
-
-    useEffect(() => {
-        if (open) {
-            // timerId = setTimeout(() => setIsOpenBar(false), 4000);
-        }
-
-        return () => {
-            if (timerId) {
-                clearInterval(timerId);
-            }
-        };
-    }, []);
-
-    return openBar && <Snackbar>{children}</Snackbar>;
-};
-
+    verticalPosition = 'bottom',
+    horizontalPosition = 'left',
+    autoHideDuration = 6000,
+    sx,
+    onClose,
+}) => (
+    <Snackbar
+        sx={sx}
+        open={open}
+        autoHideDuration={autoHideDuration}
+        onClose={onClose}
+        anchorOrigin={{
+            horizontal: horizontalPosition,
+            vertical: verticalPosition,
+        }}
+    >
+        <div>{children}</div>
+    </Snackbar>
+);
 export default AppSnackBar;
